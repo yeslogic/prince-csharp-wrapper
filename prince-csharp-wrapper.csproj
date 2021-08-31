@@ -3,6 +3,16 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <RootNamespace>PrinceXML.Wrapper</RootNamespace>
+
+    <PackageId>PrinceXMLWrapper</PackageId>
+
+    <Title>Prince C# Wrapper</Title>
+    <Description>Prince C# Wrapper</Description>
+    <Product>PrinceXML.Wrapper</Product>
+    <Version>1.0.0</Version>
+    <Company>YesLogic Pty. Ltd.</Company>
+    <Authors>YesLogic Pty. Ltd.</Authors>
+    <Copyright>Copyright (C) 2021 YesLogic Pty. Ltd.</Copyright>
   </PropertyGroup>
 
 </Project>
