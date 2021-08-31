@@ -1,22 +1,16 @@
-namespace PrinceXML
+namespace PrinceXML.Wrapper.Events
 {
-    namespace Wrapper
+    public enum MessageType
     {
-        namespace Events
-        {
-            public enum MessageType
-            {
-                ERR,
-                WRN,
-                INF,
-                DBG,
-                OUT
-            }
+        ERR,
+        WRN,
+        INF,
+        DBG,
+        OUT
+    }
 
-            public interface PrinceEvents
-            {
-                void OnMessage(MessageType msgType, string msgLocation, string msgText);
-            }
-        }
+    public interface PrinceEvents
+    {
+        void OnMessage(MessageType msgType, string msgLocation, string msgText);
     }
 }

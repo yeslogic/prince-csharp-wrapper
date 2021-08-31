@@ -1,11 +1,8 @@
 ﻿using System;
 
-namespace PrinceXML
+namespace PrinceXML.Wrapper
 {
-    namespace Wrapper
+    public class Prince
     {
-        public class Prince
-        {
-        }
     }
 }
