@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>prince_csharp_wrapper</RootNamespace>
+    <RootNamespace>PrinceXML.Wrapper</RootNamespace>
   </PropertyGroup>
 
 </Project>

@@ -1,8 +1,11 @@
 ﻿using System;
 
-namespace prince_csharp_wrapper
+namespace PrinceXML
 {
-    public class Prince
+    namespace Wrapper
     {
+        public class Prince
+        {
+        }
     }
 }
