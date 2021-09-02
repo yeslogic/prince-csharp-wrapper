@@ -1,7 +1,32 @@
+using System.Collections.Generic;
 using System.Text;
 
 namespace PrinceXML.Wrapper.Util
 {
+    internal class CommandLine
+    {
+        public static string ToCommand(string key, string? value = null)
+        {
+            return value == null ? $"--{key}" : $"--{key}={value}";
+        }
+
+        public static string ToCommand(string key, List<string> values)
+        {
+            string csvs = string.Join(",", values);
+            return ToCommand(key, csvs);
+        }
+
+        public static List<string> ToCommands(string key, List<string> values)
+        {
+            List<string> repeatingCommands = new List<string>();
+            values.ForEach(delegate(string v)
+            {
+                repeatingCommands.Add(ToCommand(key, v));
+            });
+            return repeatingCommands;
+        }
+    }
+
     internal class Json
     {
         private StringBuilder _builder;
