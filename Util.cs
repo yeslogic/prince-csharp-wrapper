@@ -5,10 +5,8 @@ namespace PrinceXML.Wrapper.Util
 {
     internal class CommandLine
     {
-        public static string ToCommand(string key, string? value = null)
-        {
-            return value == null ? $"--{key}" : $"--{key}={value}";
-        }
+        public static string ToCommand(string key, string? value = null) =>
+            value == null ? $"--{key}" : $"--{key}={value}";
 
         public static string ToCommand(string key, List<string> values)
         {
@@ -84,20 +82,11 @@ namespace PrinceXML.Wrapper.Util
             return this;
         }
 
-        public Json Field(string name, string value)
-        {
-            return Field(name).Value(value);
-        }
+        public Json Field(string name, string value) => Field(name).Value(value);
 
-        public Json Field(string name, int value)
-        {
-            return Field(name).Value(value);
-        }
+        public Json Field(string name, int value) => Field(name).Value(value);
 
-        public Json Field(string name, bool value)
-        {
-            return Field(name).Value(value);
-        }
+        public Json Field(string name, bool value) => Field(name).Value(value);
 
         public Json Value(string value)
         {
@@ -123,10 +112,7 @@ namespace PrinceXML.Wrapper.Util
             return this;
         }
 
-        public override string ToString()
-        {
-            return _builder.ToString();
-        }
+        public override string ToString() => _builder.ToString();
 
         private string QuoteAndEscape(string s)
         {
