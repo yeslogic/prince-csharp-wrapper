@@ -17,10 +17,10 @@ namespace PrinceXML.Wrapper.Util
         public static List<string> ToCommands(string key, List<string> values)
         {
             List<string> repeatingCommands = new List<string>();
-            values.ForEach(delegate(string v)
+            foreach (string v in values)
             {
                 repeatingCommands.Add(ToCommand(key, v));
-            });
+            }
             return repeatingCommands;
         }
     }
