@@ -5,25 +5,31 @@ using System.Reflection;
 
 namespace PrinceXML.Wrapper.Enums
 {
-    public static class AuthMethod
+    public class AuthMethod : Enumeration
     {
-        public const string Basic = "basic";
-        public const string Digest = "digest";
-        public const string Ntlm = "ntlm";
-        public const string Negotiate = "negotiate";
+        public static AuthMethod Basic = new(0, "basic");
+        public static AuthMethod Digest = new(1, "digest");
+        public static AuthMethod Ntlm = new(2, "ntlm");
+        public static AuthMethod Negotiate = new(3, "negotiate");
+
+        private AuthMethod(int id, string name) : base(id, name) {}
     }
 
-    public static class AuthScheme
+    public class AuthScheme : Enumeration
     {
-        public const string Http = "http";
-        public const string Https = "https";
+        public static AuthScheme Http = new(0, "http");
+        public static AuthScheme Https = new(1, "https");
+
+        private AuthScheme(int id, string name) : base(id, name) {}
     }
 
-    public static class InputType
+    public class InputType : Enumeration
     {
-        public const string Auto = "auto";
-        public const string Html = "html";
-        public const string Xml = "xml";
+        public static InputType Auto = new(0, "auto");
+        public static InputType Html = new(1, "html");
+        public static InputType Xml = new(2, "xml");
+
+        private InputType(int id, string name) : base(id, name) {}
     }
 
     public enum KeyBits
@@ -32,52 +38,62 @@ namespace PrinceXML.Wrapper.Enums
         Bits128 = 128
     }
 
-    public static class PdfProfile
+    public class PdfProfile : Enumeration
     {
-        public const string PdfA_1A = "PDF/A-1a";
-        public const string PdfA_1A_And_PdfUA_1 = "PDF/A-1a+PDF/UA-1";
-        public const string PdfA_1B = "PDF/A-1b";
-        public const string PdfA_2A = "PDF/A-2a";
-        public const string PdfA_2A_And_PdfUA_1 = "PDF/A-2a+PDF/UA-1";
-        public const string PdfA_2B = "PDF/A-2b";
-        public const string PdfA_3A = "PDF/A-3a";
-        public const string PdfA_3A_And_PdfUA_1 = "PDF/A-3a+PDF/UA-1";
-        public const string PdfA_3B = "PDF/A-3b";
-        public const string PdfUA_1 = "PDF/UA-1";
-        public const string PdfX_1A_2001 = "PDF/X-1a:2001";
-        public const string PdfX_1A_2003 = "PDF/X-1a:2003";
-        public const string PdfX_3_2002 = "PDF/X-3:2002";
-        public const string PdfX_3_2003 = "PDF/X-3:2003";
-        public const string PdfX_4 = "PDF/X-4";
+        public static PdfProfile PdfA_1A = new(0, "PDF/A-1a");
+        public static PdfProfile PdfA_1A_And_PdfUA_1 = new(1, "PDF/A-1a+PDF/UA-1");
+        public static PdfProfile PdfA_1B = new(2, "PDF/A-1b");
+        public static PdfProfile PdfA_2A = new(3, "PDF/A-2a");
+        public static PdfProfile PdfA_2A_And_PdfUA_1 = new(4, "PDF/A-2a+PDF/UA-1");
+        public static PdfProfile PdfA_2B = new(5, "PDF/A-2b");
+        public static PdfProfile PdfA_3A = new(6, "PDF/A-3a");
+        public static PdfProfile PdfA_3A_And_PdfUA_1 = new(7, "PDF/A-3a+PDF/UA-1");
+        public static PdfProfile PdfA_3B = new(8, "PDF/A-3b");
+        public static PdfProfile PdfUA_1 = new(9, "PDF/UA-1");
+        public static PdfProfile PdfX_1A_2001 = new(10, "PDF/X-1a:2001");
+        public static PdfProfile PdfX_1A_2003 = new(11, "PDF/X-1a:2003");
+        public static PdfProfile PdfX_3_2002 = new(12, "PDF/X-3:2002");
+        public static PdfProfile PdfX_3_2003 = new(13, "PDF/X-3:2003");
+        public static PdfProfile PdfX_4 = new(14, "PDF/X-4");
+
+        private PdfProfile(int id, string name) : base(id, name) {}
     }
 
-    public static class RasterBackground
+    public class RasterBackground : Enumeration
     {
-        public const string White = "white";
-        public const string Transparent = "transparent";
+        public static RasterBackground White = new(0, "white");
+        public static RasterBackground Transparent = new(1, "transparent");
+
+        private RasterBackground(int id, string name) : base(id, name) {}
     }
 
-    public static class RasterFormat
+    public class RasterFormat : Enumeration
     {
-        public const string Auto = "auto";
-        public const string Png = "png";
-        public const string Jpeg = "jpeg";
+        public static RasterFormat Auto = new(0, "auto");
+        public static RasterFormat Png = new(1, "png");
+        public static RasterFormat Jpeg = new(2, "jpeg");
+
+        private RasterFormat(int id, string name) : base(id, name) {}
     }
 
-    public static class SslType
+    public class SslType : Enumeration
     {
-        public const string Pem = "PEM";
-        public const string Der = "DER";
+        public static SslType Pem = new(0, "PEM");
+        public static SslType Der = new(1, "DER");
+
+        private SslType(int id, string name) : base(id, name) {}
     }
 
-    public static class SslVersion
+    public class SslVersion : Enumeration
     {
-        public const string Default = "default";
-        public const string TlsV1 = "tlsv1";
-        public const string TlsV1_0 = "tlsv1.0";
-        public const string TlsV1_1 = "tlsv1.1";
-        public const string TlsV1_2 = "tlsv1.2";
-        public const string TlsV1_3 = "tlsv1.3";
+        public static SslVersion Default = new(0, "default");
+        public static SslVersion TlsV1 = new(1, "tlsv1");
+        public static SslVersion TlsV1_0 = new(2, "tlsv1.0");
+        public static SslVersion TlsV1_1 = new(3, "tlsv1.1");
+        public static SslVersion TlsV1_2 = new(4, "tlsv1.2");
+        public static SslVersion TlsV1_3 = new(5, "tlsv1.3");
+
+        private SslVersion(int id, string name) : base(id, name) {}
     }
 
     // https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/enumeration-classes-over-enum-types
