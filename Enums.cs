@@ -1,3 +1,8 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+
 namespace PrinceXML.Wrapper.Enums
 {
     public static class AuthMethod
@@ -73,5 +78,46 @@ namespace PrinceXML.Wrapper.Enums
         public const string TlsV1_1 = "tlsv1.1";
         public const string TlsV1_2 = "tlsv1.2";
         public const string TlsV1_3 = "tlsv1.3";
+    }
+
+    // https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/enumeration-classes-over-enum-types
+    public abstract class Enumeration : IComparable
+    {
+        public int Id { get; private set; }
+        public string Name { get; private set; }
+
+        protected Enumeration(int id, string name) => (Id, Name) = (id, name);
+
+        public static IEnumerable<T> GetAll<T>() where T : Enumeration =>
+            typeof(T)
+                .GetFields(BindingFlags.Public |
+                           BindingFlags.Static |
+                           BindingFlags.DeclaredOnly)
+                .Select(f => f.GetValue(null))
+                .Cast<T>();
+
+        public override bool Equals(object? obj)
+        {
+            if (obj is not Enumeration otherEnum)
+            {
+                return false;
+            }
+            var typeMatches = GetType().Equals(obj.GetType());
+            var idMatches = Id.Equals(otherEnum.Id);
+            return typeMatches && idMatches;
+        }
+
+        public override int GetHashCode() => Id.GetHashCode();
+
+        public override string ToString() => Name;
+
+        public int CompareTo(object? obj)
+        {
+            if (obj is not Enumeration otherEnum)
+            {
+                return 1;
+            }
+            return Id.CompareTo(otherEnum.Id);
+        }
     }
 }
