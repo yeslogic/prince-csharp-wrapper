@@ -5,19 +5,19 @@ namespace PrinceXML.Wrapper.Util
 {
     internal class CommandLine
     {
-        public static string ToCommand(string key, string? value = null) =>
+        public static string ToCommand(string key, object? value = null) =>
             value == null ? $"--{key}" : $"--{key}={value}";
 
-        public static string ToCommandCsvs(string key, List<string> values)
+        public static string ToCommandCsvs<T>(string key, IEnumerable<T> values)
         {
             string csvs = string.Join(",", values);
             return ToCommand(key, csvs);
         }
 
-        public static List<string> ToCommands(string key, List<string> values)
+        public static List<string> ToCommands<T>(string key, IEnumerable<T> values)
         {
             List<string> repeatingCommands = new List<string>();
-            foreach (string v in values)
+            foreach (T v in values)
             {
                 repeatingCommands.Add(ToCommand(key, v));
             }
