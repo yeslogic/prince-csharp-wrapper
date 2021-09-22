@@ -8,7 +8,7 @@ namespace PrinceXML.Wrapper.Util
         public static string ToCommand(string key, string? value = null) =>
             value == null ? $"--{key}" : $"--{key}={value}";
 
-        public static string ToCommand(string key, List<string> values)
+        public static string ToCommandCsvs(string key, List<string> values)
         {
             string csvs = string.Join(",", values);
             return ToCommand(key, csvs);
