@@ -12,5 +12,7 @@ namespace PrinceXML.Wrapper.Events
     public interface PrinceEvents
     {
         void OnMessage(MessageType msgType, string msgLocation, string msgText);
+
+        void OnDataMessage(string name, string value);
     }
 }
