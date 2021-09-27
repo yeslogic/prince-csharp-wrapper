@@ -21,6 +21,12 @@ namespace PrinceXML.Wrapper
         public bool NoWarnCssUnknown { get; set; }
         public bool NoWarnCssUnsupported { get; set; }
 
+        // Input options.
+        public InputType? InputType { get; set; }
+        public string? BaseUrl { get; set; }
+        public bool XInclude { get; set; }
+        public bool XmlExternalEntities { get; set; }
+
         // Network options.
         public bool NoNetwork { get; set; }
         public bool NoRedirects { get; set; }
