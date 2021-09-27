@@ -127,11 +127,11 @@ namespace PrinceXML.Wrapper
             if (AuthPassword != null) { cmdLine.Add(ToCommand("auth-password", AuthPassword)); }
             if (AuthServer != null) { cmdLine.Add(ToCommand("auth-server", AuthServer)); }
             if (AuthScheme != null) { cmdLine.Add(ToCommand("auth-scheme", AuthScheme)); }
-            if (!AuthMethods.Any()) { cmdLine.Add(ToCommandCsvs("auth-method", AuthMethods)); }
+            if (AuthMethods.Any()) { cmdLine.Add(ToCommandCsvs("auth-method", AuthMethods)); }
             if (NoAuthPreemptive) { cmdLine.Add(ToCommand("no-auth-preemptive")); }
             if (HttpProxy != null) { cmdLine.Add(ToCommand("http-proxy", HttpProxy)); }
             if (HttpTimeout > 0) { cmdLine.Add(ToCommand("http-timeout", HttpTimeout)); }
-            if (!Cookies.Any()) { cmdLine.AddRange(ToCommands("cookie", Cookies)); }
+            if (Cookies.Any()) { cmdLine.AddRange(ToCommands("cookie", Cookies)); }
             if (CookieJar != null) { cmdLine.Add(ToCommand("cookiejar", CookieJar)); }
             if (SslCaCert != null) { cmdLine.Add(ToCommand("ssl-cacert", SslCaCert)); }
             if (SslCaPath != null) { cmdLine.Add(ToCommand("ssl-capath", SslCaPath)); }
