@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -138,6 +139,86 @@ namespace PrinceXML.Wrapper
             if (NoParallelDownloads) { cmdLine.Add(ToCommand("no-parallel-downloads")); }
 
             return cmdLine;
+        }
+
+        protected bool ReadMessages(StreamReader reader)
+        {
+            string result = "";
+            string? line = reader.ReadLine();
+
+            while (line != null)
+            {
+                string[] tokens = line.Split("|", 2);
+                if (tokens.Length == 2)
+                {
+                    string msgTag = tokens[0];
+                    string msgBody = tokens[1];
+
+                    switch (msgTag)
+                    {
+                        case "msg":
+                            HandleMessage(msgBody);
+                            break;
+                        case "dat":
+                            HandleDataMessage(msgBody);
+                            break;
+                        case "fin":
+                            result = msgBody;
+                            break;
+                    }
+                }
+                else
+                {
+                    // Ignore too-short messages.
+                }
+                line = reader.ReadLine();
+            }
+
+            return result.Equals("success");
+        }
+
+        private void HandleMessage(string msgBody)
+        {
+            if (_events == null) { return; }
+
+            string[] tokens = msgBody.Split("|", 3);
+            if (tokens.Length == 3)
+            {
+                MessageType msgType;
+                if (Enum.TryParse(tokens[0].ToUpper(), out msgType))
+                {
+                    string msgLocation = tokens[1];
+                    string msgText = tokens[2];
+
+                    _events.OnMessage(msgType, msgLocation, msgText);
+                }
+                else
+                {
+                    // Ignore unknown message types.
+                }
+            }
+            else
+            {
+                // Ignore incorrectly-formatted messages.
+            }
+        }
+
+        private void HandleDataMessage(string msgBody)
+        {
+            if (_events == null) { return; }
+
+            string[] tokens = msgBody.Split("|", 2);
+            if (tokens.Length == 2)
+            {
+                string name = tokens[0];
+                string value = tokens[1];
+
+                _events.OnDataMessage(name, value);
+            }
+            else
+            {
+                // Ignore incorrectly-formatted messages.
+            }
         }
     }
 
