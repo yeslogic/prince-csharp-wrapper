@@ -228,9 +228,13 @@ namespace PrinceXML.Wrapper
         }
     }
 
-    public record FileAttachment(
-        string url,
-        string? filename = null,
-        string? description = null
-    );
+    public class FileAttachment
+    {
+        public string Url { get; }
+        public string FileName { get; }
+        public string Description { get; }
+
+        public FileAttachment(string url, string fileName = null, string description = null) =>
+            (Url, FileName, Description) = (url, fileName, description);
+    }
 }
