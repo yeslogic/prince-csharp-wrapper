@@ -112,7 +112,7 @@ namespace PrinceXML.Wrapper.Enums
                 .Select(f => f.GetValue(null))
                 .Cast<T>();
 
-        public override bool Equals(object? obj)
+        public override bool Equals(object obj)
         {
             Enumeration otherEnum = obj as Enumeration;
             if (otherEnum == null)
@@ -128,7 +128,7 @@ namespace PrinceXML.Wrapper.Enums
 
         public override string ToString() => Name;
 
-        public int CompareTo(object? obj)
+        public int CompareTo(object obj)
         {
             Enumeration otherEnum = obj as Enumeration;
             if (otherEnum == null)

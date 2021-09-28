@@ -5,7 +5,7 @@ namespace PrinceXML.Wrapper.Util
 {
     internal class CommandLine
     {
-        public static string ToCommand(string key, object? value = null) =>
+        public static string ToCommand(string key, object value = null) =>
             value == null ? $"--{key}" : $"--{key}={value}";
 
         public static string ToCommandCsvs<T>(string key, IEnumerable<T> values)
@@ -36,7 +36,7 @@ namespace PrinceXML.Wrapper.Util
             _comma = false;
         }
 
-        public Json BeginObj(string? name = null)
+        public Json BeginObj(string name = null)
         {
             MaybeAppendComma();
             if (name != null)
