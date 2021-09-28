@@ -114,7 +114,8 @@ namespace PrinceXML.Wrapper.Enums
 
         public override bool Equals(object? obj)
         {
-            if (obj is not Enumeration otherEnum)
+            Enumeration otherEnum = obj as Enumeration;
+            if (otherEnum == null)
             {
                 return false;
             }
@@ -129,7 +130,8 @@ namespace PrinceXML.Wrapper.Enums
 
         public int CompareTo(object? obj)
         {
-            if (obj is not Enumeration otherEnum)
+            Enumeration otherEnum = obj as Enumeration;
+            if (otherEnum == null)
             {
                 return 1;
             }
