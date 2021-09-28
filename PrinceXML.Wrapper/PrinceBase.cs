@@ -154,7 +154,7 @@ namespace PrinceXML.Wrapper
 
             while (line != null)
             {
-                string[] tokens = line.Split("|", 2);
+                string[] tokens = line.Split(new char[] { '|' }, 2);
                 if (tokens.Length == 2)
                 {
                     string msgTag = tokens[0];
@@ -187,7 +187,7 @@ namespace PrinceXML.Wrapper
         {
             if (_events == null) { return; }
 
-            string[] tokens = msgBody.Split("|", 3);
+            string[] tokens = msgBody.Split(new char[] { '|' }, 3);
             if (tokens.Length == 3)
             {
                 MessageType msgType;
@@ -213,7 +213,7 @@ namespace PrinceXML.Wrapper
         {
             if (_events == null) { return; }
 
-            string[] tokens = msgBody.Split("|", 2);
+            string[] tokens = msgBody.Split(new char[] { '|' }, 2);
             if (tokens.Length == 2)
             {
                 string name = tokens[0];
