@@ -118,8 +118,8 @@ namespace PrinceXML.Wrapper.Enums
             {
                 return false;
             }
-            var typeMatches = GetType().Equals(obj.GetType());
-            var idMatches = Id.Equals(otherEnum.Id);
+            bool typeMatches = GetType().Equals(obj.GetType());
+            bool idMatches = Id.Equals(otherEnum.Id);
             return typeMatches && idMatches;
         }
 
