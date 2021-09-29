@@ -117,8 +117,6 @@ namespace PrinceXML.Wrapper
         {
             List<string> cmdLine = new List<string>();
 
-            cmdLine.Add(_princePath);
-
             if (Verbose) { cmdLine.Add(ToCommand("verbose")); }
             if (Debug) { cmdLine.Add(ToCommand("debug")); }
             if (Log != null) { cmdLine.Add(ToCommand("log", Log)); }
