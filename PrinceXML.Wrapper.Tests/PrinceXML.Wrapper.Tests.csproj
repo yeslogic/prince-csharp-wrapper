@@ -1,6 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <!-- FIXME netstandard2.0 is a specification, not a runtime. As such, we'd
+    ideally want to test against Framework 4.6.1 and Core 2.0 (both implement
+    the standard). However, neither appear to be installed on the GitHub Actions
+    runners, nor am I able to get either working on my (Linux) development
+    machine. -->
     <TargetFramework>net5.0</TargetFramework>
     <Nullable>enable</Nullable>
 
