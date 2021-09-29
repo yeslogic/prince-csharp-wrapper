@@ -98,6 +98,10 @@ namespace PrinceXML.Wrapper
         public bool DisallowModify { get; set; }
         public bool AllowAssembly { get; set; }
 
+        // License options.
+        public string LicenseFile { get; set; }
+        public string LicenseKey { get; set; }
+
         protected PrinceBase(string princePath, PrinceEvents events = null) =>
             (_princePath, _events) = (princePath, events);
 
@@ -143,6 +147,9 @@ namespace PrinceXML.Wrapper
             if (SslVersion != null) { cmdLine.Add(ToCommand("ssl-version", SslVersion)); }
             if (Insecure) { cmdLine.Add(ToCommand("insecure")); }
             if (NoParallelDownloads) { cmdLine.Add(ToCommand("no-parallel-downloads")); }
+
+            if (LicenseFile != null) { cmdLine.Add(ToCommand("license-file", LicenseFile)); }
+            if (LicenseKey != null) { cmdLine.Add(ToCommand("license-key", LicenseKey)); }
 
             return cmdLine;
         }
