@@ -125,4 +125,107 @@ namespace PrinceXML.Wrapper.Util
             if (_comma) { _builder.Append(','); }
         }
     }
+
+    /* System.Diagnostics.Process in .NET Standard 2.0 does not have an API that
+       automatically escapes provided arguments.
+
+       So, we provide this utility class that copies .NET 5.0 functionality. See:
+       https://github.com/dotnet/runtime/blob/80f015da0fe4669b9ef0141cbdcf918d32441b43/src/libraries/System.Diagnostics.Process/src/System/Diagnostics/ProcessStartInfo.cs
+       https://github.com/dotnet/runtime/blob/80f015da0fe4669b9ef0141cbdcf918d32441b43/src/libraries/System.Private.CoreLib/src/System/PasteArguments.cs
+    */
+    internal class Arguments
+    {
+        private const char Quote = '\"';
+        private const char Backslash = '\\';
+
+        public static string BuildArguments(List<string> argumentList)
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+            AppendArgumentsTo(stringBuilder, argumentList);
+            return stringBuilder.ToString();
+        }
+
+        private static void AppendArgumentsTo(StringBuilder stringBuilder, List<string> argumentList)
+        {
+            if (argumentList != null && argumentList.Count > 0)
+            {
+                foreach (string argument in argumentList)
+                {
+                    AppendArgument(stringBuilder, argument);
+                }
+            }
+        }
+
+        private static void AppendArgument(StringBuilder stringBuilder, string argument)
+        {
+            if (stringBuilder.Length != 0)
+            {
+                stringBuilder.Append(' ');
+            }
+
+            if (argument.Length != 0 && ContainsNoWhitespaceOrQuotes(argument))
+            {
+                stringBuilder.Append(argument);
+            }
+            else
+            {
+                stringBuilder.Append(Quote);
+                int idx = 0;
+                while (idx < argument.Length)
+                {
+                    char c = argument[idx++];
+                    if (c == Backslash)
+                    {
+                        int numBackSlash = 1;
+                        while (idx < argument.Length && argument[idx] == Backslash)
+                        {
+                            idx++;
+                            numBackSlash++;
+                        }
+
+                        if (idx == argument.Length)
+                        {
+                            stringBuilder.Append(Backslash, numBackSlash * 2);
+                        }
+                        else if (argument[idx] == Quote)
+                        {
+                            stringBuilder.Append(Backslash, numBackSlash * 2 + 1);
+                            stringBuilder.Append(Quote);
+                            idx++;
+                        }
+                        else
+                        {
+                            stringBuilder.Append(Backslash, numBackSlash);
+                        }
+
+                        continue;
+                    }
+
+                    if (c == Quote)
+                    {
+                        stringBuilder.Append(Backslash);
+                        stringBuilder.Append(Quote);
+                        continue;
+                    }
+
+                    stringBuilder.Append(c);
+                }
+
+                stringBuilder.Append(Quote);
+            }
+        }
+
+        private static bool ContainsNoWhitespaceOrQuotes(string s)
+        {
+            for (int i = 0; i < s.Length; i++)
+            {
+                char c = s[i];
+                if (char.IsWhiteSpace(c) || c == Quote)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
 }

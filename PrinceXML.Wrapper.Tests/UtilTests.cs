@@ -89,4 +89,21 @@ namespace PrinceXML.Wrapper.Tests
             Assert.Equal("\"ab\\\\cd\\\"ef\\\"gh\\\\ij\":{}", j.ToString());
         }
     }
+
+    public class ArgumentsTests
+    {
+        // https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.processstartinfo.argumentlist?view=net-5.0#examples
+        [Fact]
+        public void BuildArguments()
+        {
+            List<string> args = new List<string>()
+            {
+                "/c",
+                "dir",
+                @"C:\Program Files\dotnet"
+            };
+            Assert.Equal("/c dir \"C:\\Program Files\\dotnet\"",
+                Arguments.BuildArguments(args));
+        }
+    }
 }
