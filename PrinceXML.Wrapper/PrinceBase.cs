@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 
@@ -7,6 +9,7 @@ namespace PrinceXML.Wrapper
 {
     using Enums;
     using Events;
+    using static Util.Arguments;
     using static Util.CommandLine;
 
     public abstract class PrinceBase
@@ -112,6 +115,42 @@ namespace PrinceXML.Wrapper
         public abstract bool Convert(Stream input, Stream output);
 
         public abstract bool ConvertString(string input, Stream output);
+
+        protected Process StartPrince(List<string> args)
+        {
+            ProcessStartInfo psi = new ProcessStartInfo(_princePath, BuildArguments(args));
+            try
+            {
+                Process process = Process.Start(psi);
+                if (process != null && !process.HasExited)
+                {
+                    return process;
+                }
+                throw new ApplicationException("Error starting Prince: " + _princePath);
+            }
+            catch (Win32Exception ex)
+            {
+                const int ERROR_FILE_NOT_FOUND = 2;
+                const int ERROR_PATH_NOT_FOUND = 3;
+                const int ERROR_ACCESS_DENIED = 5;
+
+                string msg = ex.Message;
+                switch (ex.NativeErrorCode)
+                {
+                    case ERROR_FILE_NOT_FOUND:
+                        msg += " -- Please verify that Prince.exe is in the directory.";
+                        break;
+                    case ERROR_PATH_NOT_FOUND:
+                        msg += " -- Please check Prince path.";
+                        break;
+                    case ERROR_ACCESS_DENIED:
+                        msg += " -- Please check system permissions to run Prince.";
+                        break;
+                }
+
+                throw new ApplicationException(msg);
+            }
+        }
 
         protected List<string> GetBaseCommandLine()
         {
