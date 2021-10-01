@@ -191,7 +191,7 @@ namespace PrinceXML.Wrapper
             if (Xmp != null) { cmdLine.Add(ToCommand("pdf-xmp", Xmp)); }
 
             if (Encrypt) { cmdLine.Add(ToCommand("encrypt")); }
-            if (KeyBits != null) { cmdLine.Add(ToCommand("key-bits", KeyBits)); }
+            if (KeyBits != null) { cmdLine.Add(ToCommand("key-bits", (int) KeyBits)); }
             if (UserPassword != null) { cmdLine.Add(ToCommand("user-password", UserPassword)); }
             if (OwnerPassword != null) { cmdLine.Add(ToCommand("owner-password", OwnerPassword)); }
             if (DisallowPrint) { cmdLine.Add(ToCommand("disallow-print")); }
