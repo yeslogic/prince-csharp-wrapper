@@ -118,7 +118,17 @@ namespace PrinceXML.Wrapper
 
         protected Process StartPrince(List<string> args)
         {
-            ProcessStartInfo psi = new ProcessStartInfo(_princePath, BuildArguments(args));
+            ProcessStartInfo psi = new ProcessStartInfo()
+            {
+                Arguments = BuildArguments(args),
+                CreateNoWindow = true,
+                FileName = _princePath,
+                RedirectStandardError = true,
+                RedirectStandardInput = true,
+                RedirectStandardOutput = true,
+                UseShellExecute = false,
+            };
+
             try
             {
                 Process process = Process.Start(psi);
