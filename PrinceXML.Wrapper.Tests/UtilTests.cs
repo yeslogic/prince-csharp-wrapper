@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Xunit;
 
 using PrinceXML.Wrapper.Util;
@@ -28,13 +29,13 @@ namespace PrinceXML.Wrapper.Tests
         [Fact]
         public void ToCommands()
         {
-            List<int> values = new List<int>() { 1, 2, 3 };
+            List<int> values = new List<int>() { 0, 1, 2 };
             List<string> expected = new List<string>() {
                 "--test=1",
                 "--test=2",
                 "--test=3",
             };
-            List<string> actual = CommandLine.ToCommands("test", values);
+            List<string> actual = CommandLine.ToCommands("test", values.Select(x => x + 1));
             Assert.Equal(expected, actual);
         }
     }

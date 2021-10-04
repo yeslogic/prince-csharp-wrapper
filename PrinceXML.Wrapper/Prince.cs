@@ -150,7 +150,7 @@ namespace PrinceXML.Wrapper
 
             if (InputType != null) { cmdLine.Add(ToCommand("input", InputType)); }
             if (BaseUrl != null) { cmdLine.Add(ToCommand("baseurl", BaseUrl)); }
-            if (Remaps.Any()) { cmdLine.AddRange(ToCommands("remap", Remaps.Select((u, d) => $"{u}={d}").ToList())); }
+            if (Remaps.Any()) { cmdLine.AddRange(ToCommands("remap", Remaps.Select((u, d) => $"{u}={d}"))); }
             if (XInclude) { cmdLine.Add(ToCommand("xinclude")); }
             if (XmlExternalEntities) { cmdLine.Add(ToCommand("xml-external-entities")); }
             if (NoLocalFiles) { cmdLine.Add(ToCommand("no-local-files")); }
@@ -170,7 +170,7 @@ namespace PrinceXML.Wrapper
             if (PdfLang != null) { cmdLine.Add(ToCommand("pdf-lang", PdfLang)); }
             if (PdfProfile != null) { cmdLine.Add(ToCommand("pdf-profile", PdfProfile)); }
             if (PdfOutputIntent != null) { cmdLine.Add(ToCommand("pdf-output-intent", PdfOutputIntent)); }
-            if (FileAttachments.Any()) { cmdLine.AddRange(ToCommands("attach", FileAttachments.Select(a => a.Url).ToList())); }
+            if (FileAttachments.Any()) { cmdLine.AddRange(ToCommands("attach", FileAttachments.Select(a => a.Url))); }
             if (NoArtificialFonts) { cmdLine.Add(ToCommand("no-artificial-fonts")); }
             if (NoEmbedFonts) { cmdLine.Add(ToCommand("no-embed-fonts")); }
             if (NoSubsetFonts) { cmdLine.Add(ToCommand("no-subset-fonts")); }
