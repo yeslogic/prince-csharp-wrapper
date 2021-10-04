@@ -239,7 +239,7 @@ namespace PrinceXML.Wrapper
                 line = reader.ReadLine();
             }
 
-            return result.Equals("success");
+            return result == "success";
         }
 
         private void HandleMessage(string msgBody)
