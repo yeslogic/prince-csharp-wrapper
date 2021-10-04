@@ -116,6 +116,11 @@ namespace PrinceXML.Wrapper
 
         public abstract bool ConvertString(string input, Stream output);
 
+        public void AddFileAttachment(string url)
+        {
+            FileAttachments.Add(new FileAttachment(url));
+        }
+
         protected Process StartPrince(List<string> args)
         {
             ProcessStartInfo psi = new ProcessStartInfo()
