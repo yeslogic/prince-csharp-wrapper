@@ -14,7 +14,7 @@ namespace PrinceXML.Wrapper
     public class Prince : PrinceBase
     {
         // Input options.
-        public List<string> Remaps { get; } = new List<string>();
+        public List<(string, string)> Remaps { get; } = new List<(string, string)>();
         public bool NoLocalFiles { get; set; }
 
         // CSS options.
@@ -150,7 +150,7 @@ namespace PrinceXML.Wrapper
 
             if (InputType != null) { cmdLine.Add(ToCommand("input", InputType)); }
             if (BaseUrl != null) { cmdLine.Add(ToCommand("baseurl", BaseUrl)); }
-            if (Remaps.Any()) { cmdLine.AddRange(ToCommands("remap", Remaps)); }
+            if (Remaps.Any()) { cmdLine.AddRange(ToCommands("remap", Remaps.Select((u, d) => $"{u}={d}").ToList())); }
             if (XInclude) { cmdLine.Add(ToCommand("xinclude")); }
             if (XmlExternalEntities) { cmdLine.Add(ToCommand("xml-external-entities")); }
             if (NoLocalFiles) { cmdLine.Add(ToCommand("no-local-files")); }
