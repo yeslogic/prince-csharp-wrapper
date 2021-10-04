@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace PrinceXML.Wrapper.Util
@@ -123,6 +124,107 @@ namespace PrinceXML.Wrapper.Util
         private void MaybeAppendComma()
         {
             if (_comma) { _builder.Append(','); }
+        }
+    }
+
+    internal class Chunk
+    {
+        public string Tag { get; }
+        public byte[] Bytes { get; }
+
+        private Chunk(string tag, byte[] bytes) => (Tag, Bytes) = (tag, bytes);
+
+        public override string ToString() => Encoding.UTF8.GetString(Bytes);
+
+        public static Chunk ReadChunk(Stream input)
+        {
+            byte[] tagBytes = new byte[3];
+            if (!ReadBytes(input, tagBytes))
+            {
+                throw new IOException("Failed to read chunk tag.");
+            }
+            string tag = Encoding.ASCII.GetString(tagBytes);
+
+            if (input.ReadByte() != ' ')
+            {
+                throw new IOException("Expected space after chunk tag.");
+            }
+
+            const int maxNumLength = 9;
+            int length = 0;
+            int numLength = 0;
+
+            for (; numLength < maxNumLength + 1; numLength++)
+            {
+                int b = input.ReadByte();
+
+                if (b == '\n') { break; }
+                if (b < '0' || b > '9')
+                {
+                    throw new IOException("Unexpected character in chunk length.");
+                }
+
+                length *= 10;
+                length += b - '0';
+            }
+
+            if (numLength < 1 || numLength > maxNumLength)
+            {
+                throw new IOException("Invalid chunk length.");
+            }
+
+            byte[] dataBytes = new byte[length];
+            if (!ReadBytes(input, dataBytes))
+            {
+                throw new IOException("Failed to read chunk data.");
+            }
+
+            if (input.ReadByte() != '\n')
+            {
+                throw new IOException("Expected newline after chunk data.");
+            }
+
+            return new Chunk(tag, dataBytes);
+        }
+
+        public static void WriteChunk(Stream output, string tag, string data)
+        {
+            WriteChunk(output, tag, Encoding.UTF8.GetBytes(data));
+        }
+
+        public static void WriteChunk(Stream output, string tag, byte[] data)
+        {
+            string s = tag + " " + data.Length + "\n";
+            byte[] b = Encoding.UTF8.GetBytes(s);
+
+            output.Write(b, 0, b.Length);
+            output.Write(data, 0, data.Length);
+            output.WriteByte(((byte) '\n'));
+        }
+
+        private static bool ReadBytes(Stream input, byte[] buffer)
+        {
+            int length = buffer.Length;
+            int offset = 0;
+
+            while (length > 0)
+            {
+                int count = input.Read(buffer, offset, length);
+
+                if (count < 0)
+                {
+                    return false;
+                }
+                if (count > length)
+                {
+                    throw new IOException("Unexpected read overrun.");
+                }
+
+                length -= count;
+                offset += count;
+            }
+
+            return true;
         }
     }
 
