@@ -142,6 +142,117 @@ namespace PrinceXML.Wrapper
             }
         }
 
+        public bool Rasterize(string inputPath, string outputPath)
+        {
+            return Rasterize(new List<string> { inputPath }, outputPath);
+        }
+
+        public bool Rasterize(List<string> inputPaths, string outputPath)
+        {
+            List<string> cmdLine = GetJobCommandLine("normal");
+            cmdLine.AddRange(inputPaths);
+            cmdLine.Add(ToCommand("raster-output", outputPath));
+
+            using (Process process = StartPrince(cmdLine))
+            {
+                return ReadMessages(process.StandardError);
+            }
+        }
+
+        public bool Rasterize(string inputPath, Stream output)
+        {
+            return Rasterize(new List<string> { inputPath }, output);
+        }
+
+        public bool Rasterize(List<string> inputPaths, Stream output)
+        {
+            if (RasterPage < 1)
+            {
+                throw new ApplicationException("RasterPage has to be > 0.");
+            }
+            if (RasterFormat == null || RasterFormat == RasterFormat.Auto)
+            {
+                throw new ApplicationException("RasterFormat has to be set to Jpeg or Png.");
+            }
+
+            List<string> cmdLine = GetJobCommandLine("buffered");
+            cmdLine.AddRange(inputPaths);
+            cmdLine.Add(ToCommand("raster-output", "-"));
+
+            using (Process process = StartPrince(cmdLine))
+            {
+                using (Stream fromPrince = process.StandardOutput.BaseStream)
+                {
+                    fromPrince.CopyTo(output);
+                }
+                return ReadMessages(process.StandardError);
+            }
+        }
+
+        public bool Rasterize(Stream input, Stream output)
+        {
+            if (InputType == null || InputType == InputType.Auto)
+            {
+                throw new ApplicationException("InputType has to be set to Xml or Html.");
+            }
+            if (RasterPage < 1)
+            {
+                throw new ApplicationException("RasterPage has to be > 0.");
+            }
+            if (RasterFormat == null || RasterFormat == RasterFormat.Auto)
+            {
+                throw new ApplicationException("RasterFormat has to be set to Jpeg or Png.");
+            }
+
+            List<string> cmdLine = GetJobCommandLine("buffered");
+            cmdLine.Add(ToCommand("raster-output", "-"));
+            cmdLine.Add("-");
+
+            using (Process process = StartPrince(cmdLine))
+            {
+                using (Stream toPrince = process.StandardInput.BaseStream)
+                {
+                    input.CopyTo(toPrince);
+                }
+                using (Stream fromPrince = process.StandardOutput.BaseStream)
+                {
+                    fromPrince.CopyTo(output);
+                }
+                return ReadMessages(process.StandardError);
+            }
+        }
+
+        public bool RasterizeString(string input, string outputPath)
+        {
+            if (InputType == null || InputType == InputType.Auto)
+            {
+                throw new ApplicationException("InputType has to be set to Xml or Html.");
+            }
+
+            List<string> cmdLine = GetJobCommandLine("buffered");
+            cmdLine.Add(ToCommand("raster-output", outputPath));
+            cmdLine.Add("-");
+
+            using (Process process = StartPrince(cmdLine))
+            {
+                using (Stream toPrince = process.StandardInput.BaseStream)
+                {
+                    byte[] inputBytes = Encoding.UTF8.GetBytes(input);
+                    toPrince.Write(inputBytes, 0, inputBytes.Length);
+                }
+                return ReadMessages(process.StandardError);
+            }
+        }
+
+        public bool RasterizeString(string input, Stream output)
+        {
+            using (MemoryStream inputStream =
+                new MemoryStream(Encoding.UTF8.GetBytes(input)))
+            {
+                return Rasterize(inputStream, output);
+            }
+        }
+
         private List<string> GetJobCommandLine(string logType)
         {
             List<string> cmdLine = GetBaseCommandLine();
