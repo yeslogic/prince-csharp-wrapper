@@ -16,6 +16,10 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: '5.0.x'
+          source-url: https://nuget.pkg.github.com/yeslogic/index.json
+        env:
+          NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Set up DocFx
         uses: crazy-max/ghaction-chocolatey@v1
         with:
@@ -32,6 +36,13 @@ jobs:
         with:
           name: site
           path: docfx_project/_site
+
+      - name: Generate NuGet package
+        working-directory: PrinceXML.Wrapper
+        run: dotnet pack -c Release
+      - name: Publish BuGet package
+        working-directory: PrinceXML.Wrapper/bin/Release
+        run: dotnet nuget push *.nupkg
 
   deploy:
     needs: [build]
