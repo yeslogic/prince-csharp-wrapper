@@ -11,29 +11,51 @@ namespace PrinceXML.Wrapper
     using Util;
     using static Util.CommandLine;
 
+    /// <summary>
+    /// Class for creating persistent Prince control processes that can be used for
+    /// multiple consecutive document conversions.
+    /// </summary>
     public class PrinceControl : PrinceBase
     {
+        /// <summary>
+        /// Get the version string for the running Prince process.
+        /// </summary>
+        /// <value>The version string.</value>
         public string Version { get; private set; }
 
         private Process _process;
         private List<string> _inputPaths = new List<string>();
         private List<byte[]> _resources = new List<byte[]>();
 
+        /// <summary>
+        /// Constructor for <c>PrinceControl</c>.
+        /// </summary>
+        /// <param name="princePath">
+        /// The path of the Prince executable. For example, this may be
+        /// <c>C:\Program&#xA0;Files\Prince\engine\bin\prince.exe</c> on Windows.
+        /// </param>
+        /// <param name="events">
+        /// An implementation of <c>PrinceEvents</c> that will receive messages
+        /// returned from Prince.
+        /// </param>
         public PrinceControl(string princePath, PrinceEvents events = null)
             : base(princePath, events) {}
 
+        /// <inheritdoc/>
         public override bool Convert(string inputPath, Stream output)
         {
             _inputPaths.Add(inputPath);
             return Convert(output);
         }
 
+        /// <inheritdoc/>
         public override bool Convert(List<string> inputPaths, Stream output)
         {
             _inputPaths.AddRange(inputPaths);
             return Convert(output);
         }
 
+        /// <inheritdoc/>
         public override bool Convert(Stream input, Stream output)
         {
             if (InputType == null || InputType == InputType.Auto)
@@ -50,6 +72,7 @@ namespace PrinceXML.Wrapper
             return Convert(output);
         }
 
+        /// <inheritdoc/>
         public override bool ConvertString(string input, Stream output)
         {
             if (InputType == null || InputType == InputType.Auto)
@@ -103,6 +126,10 @@ namespace PrinceXML.Wrapper
             }
         }
 
+        /// <summary>
+        /// Start a Prince control process that can be used for multiple consecutive
+        /// document conversions.
+        /// </summary>
         public void Start()
         {
             if (_process != null)
@@ -132,6 +159,9 @@ namespace PrinceXML.Wrapper
             }
         }
 
+        /// <summary>
+        /// Stop the Prince control process.
+        /// </summary>
         public void Stop()
         {
             if (_process == null)
@@ -233,18 +263,32 @@ namespace PrinceXML.Wrapper
             return json.ToString();
         }
 
+        /// <summary>
+        /// Add a JavaScript script that will run before conversion.
+        /// </summary>
+        /// <param name="script">The script as a byte array.</param>
         public void AddScript(byte[] script)
         {
             _resources.Add(script);
             Scripts.Add("job-resource:" + (_resources.Count - 1));
         }
 
+        /// <summary>
+        /// Add a CSS style sheet that will be applied to each input document.
+        /// </summary>
+        /// <param name="styleSheet">The CSS style sheet as a byte array.</param>
         public void AddStyleSheet(byte[] styleSheet)
         {
             _resources.Add(styleSheet);
             StyleSheets.Add("job-resource:" + (_resources.Count - 1));
         }
 
+        /// <summary>
+        /// Add a file attachment that will be attached to the PDF file.
+        /// </summary>
+        /// <param name="attachment">The file attachment as a byte array.</param>
+        /// <param name="fileName">The filename of the file attachment.</param>
+        /// <param name="description">The description of the file attachment.</param>
         public void AddFileAttachment(byte[] attachment, string fileName, string description)
         {
             _resources.Add(attachment);

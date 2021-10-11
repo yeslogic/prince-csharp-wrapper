@@ -12,115 +12,485 @@ namespace PrinceXML.Wrapper
     using static Util.Arguments;
     using static Util.CommandLine;
 
+    /// <summary>Base class for <c>Prince</c> and <c>PrinceControl</c>.</summary>
     public abstract class PrinceBase
     {
         private string _princePath;
         private PrinceEvents _events;
 
         // Logging options.
+        /// <summary>
+        /// Enable logging of informative messages.
+        /// </summary>
+        /// <value>true if verbose logging is enabled. Default value is false.</value>
         public bool Verbose { get; set; }
+        /// <summary>
+        /// Enable logging of debug messages.
+        /// </summary>
+        /// <value>true if debug logging is enabled. Default value is false.</value>
         public bool Debug { get; set; }
+        /// <summary>
+        /// Specify a file that Prince should use to log messages. If this property
+        /// is not set, then Prince will not write to any log. This property does
+        /// not affect the operation of <c>PrinceEvents</c>, which will also receive
+        /// messages from Prince.
+        /// </summary>
+        /// <value>The filename that Prince uses to log messages.</value>
         public string Log { get; set; }
+        /// <summary>
+        /// Disable warnings about unknown CSS features.
+        /// </summary>
+        /// <value>true if warnings are disabled. Default value is false.</value>
         public bool NoWarnCssUnknown { get; set; }
+        /// <summary>
+        /// Disable warnings about unsupported CSS features.
+        /// </summary>
+        /// <value>true if warnings are disabled. Default value is false.</value>
         public bool NoWarnCssUnsupported { get; set; }
 
         // Input options.
+        /// <summary>
+        /// Specify the input type of the document. Setting this to <c>InputType.Xml</c>
+        /// or <c>InputType.Html</c> is required if a document is provided via a
+        /// <c>Stream</c> or <c>string</c>, as the types of these documents cannot
+        /// be determined.
+        /// </summary>
+        /// <value>The document's input type. Default value is <c>InputType.Auto</c>.</value>
         public InputType InputType { get; set; }
+        /// <summary>
+        /// Specify the base URL of the input document. This can be used to override
+        /// the path of the input document, which is convenient when processing local
+        /// copies of a document from a website.
+        /// </summary>
+        /// <value>The base URL or path of the input document.</value>
         public string BaseUrl { get; set; }
+        /// <summary>
+        /// Enable XInclude and XML external entities (XXE). Note that XInclude only
+        /// applies to XML files. To apply it to HTML files, the input format needs
+        /// to be specified by setting <c>InputType</c>.
+        /// </summary>
+        /// <value>true if XInclude and XXE are enabled. Default value is false.</value>
         public bool XInclude { get; set; }
+        /// <summary>
+        /// Enable XML external entities (XXE).
+        /// </summary>
+        /// <value>true if XXE is enabled. Default value is false.</value>
         public bool XmlExternalEntities { get; set; }
 
         // Network options.
+        /// <summary>
+        /// Disable network access (prevents HTTP downloads).
+        /// </summary>
+        /// <value>true if network access is disabled. Default value is false.</value>
         public bool NoNetwork { get; set; }
+        /// <summary>
+        /// Disable all HTTP and HTTPS redirects.
+        /// </summary>
+        /// <value>true if redirects are disabled. Default value is false.</value>
         public bool NoRedirects { get; set; }
+        /// <summary>
+        /// Specify the username for HTTP authentication.
+        /// </summary>
+        /// <value>The username for authentication.</value>
         public string AuthUser { get; set; }
+        /// <summary>
+        /// Specify the password for HTTP authentication.
+        /// </summary>
+        /// <value>The password for authentication.</value>
         public string AuthPassword { get; set; }
+        /// <summary>
+        /// Send username and password credentials to the specified server only.
+        /// </summary>
+        /// <value>
+        /// The server to send credentials to (e.g. "localhost:8001"). The default
+        /// is to send them to any server which challenges for authentication.
+        /// </value>
         public string AuthServer { get; set; }
+        /// <summary>
+        /// Send username and password credentials only for requests with the
+        /// given scheme.
+        /// </summary>
+        /// <value>The authentication scheme.</value>
         public AuthScheme AuthScheme { get; set; }
+        /// <summary>
+        /// HTTP authentication methods to enable.
+        /// </summary>
+        /// <value>The authentication method to enable.</value>
         public List<AuthMethod> AuthMethods { get; } = new List<AuthMethod>();
+        /// <summary>
+        /// Do not authenticate with named servers until asked.
+        /// </summary>
+        /// <value>true if authentication preemptive is disabled. Default value is false.</value>
         public bool NoAuthPreemptive { get; set; }
+        /// <summary>
+        /// Specify the URL for the HTTP proxy server, if needed.
+        /// </summary>
+        /// <value>The URL for the HTTP proxy server.</value>
         public string HttpProxy { get; set; }
+        /// <summary>
+        /// Specify the timeout for HTTP requests.
+        /// </summary>
+        /// <value>
+        /// The HTTP timeout in seconds. Value must be greater than 0.
+        /// Default value is false.
+        /// </value>
         public int HttpTimeout { get; set; }
+        /// <summary>
+        /// Add a value for the <c>Set-Cookie</c> HTTP header value.
+        /// </summary>
+        /// <value>The cookie to be added.</value>
         public List<string> Cookies { get; } = new List<string>();
+        /// <summary>
+        /// Specify a file containing HTTP cookies.
+        /// </summary>
+        /// <value>The filename of the file containing HTTP cookies.</value>
         public string CookieJar { get; set; }
+        /// <summary>
+        /// Specify an SSL certificate file.
+        /// </summary>
+        /// <value>The filename of the SSL certificate file.</value>
         public string SslCaCert { get; set; }
+        /// <summary>
+        /// Specify an SSL certificate directory.
+        /// </summary>
+        /// <value>The SSL certificate directory.</value>
         public string SslCaPath { get; set; }
+        /// <summary>
+        /// Specify an SSL client certificate file. On MacOS, specify a PKCS#12
+        /// file containing a client certificate and private key. Client authentication
+        /// is not supported on Windows.
+        /// </summary>
+        /// <value>The filename of the SSL client certificate file.</value>
         public string SslCert { get; set; }
+        /// <summary>
+        /// Specify the SSL client certificate file type. This option is not
+        /// supported on MacOS or Windows.
+        /// </summary>
+        /// <value>The SSL client certificate file type.</value>
         public SslType SslCertType { get; set; }
+        /// <summary>
+        ///  Specify an SSL private key file. This option is not supported on MacOS
+        /// or Windows.
+        /// </summary>
+        /// <value>The filename of the SSL private key file.</value>
         public string SslKey { get; set; }
+        /// <summary>
+        /// Specify the SSL private key file type. This option is not supported on
+        /// MacOS or Windows.
+        /// </summary>
+        /// <value>The SSL private key file type.</value>
         public SslType SslKeyType { get; set; }
+        /// <summary>
+        /// Specify a password for the SSL private key.
+        /// </summary>
+        /// <value>The password for the SSL private key.</value>
         public string SslKeyPassword { get; set; }
+        /// <summary>
+        /// Set the minimum version of SSL to allow.
+        /// </summary>
+        /// <value>
+        /// The minimum version to allow. Default value is <c>SslVersion.Default</c>.
+        /// </value>
         public SslVersion SslVersion { get; set; }
+        /// <summary>
+        /// Specify whether to disable SSL verification.
+        /// </summary>
+        /// <value>true if SSL verification is disabled. Default value is false.</value>
         public bool Insecure { get; set; }
+        /// <summary>
+        /// Disable downloading multiple HTTP resources at once.
+        /// </summary>
+        /// <value>true if parallel downloads are disabled. Default value is false.</value>
         public bool NoParallelDownloads { get; set; }
 
         // JavaScript options.
+        /// <summary>
+        /// Specify whether JavaScript found in documents should be run.
+        /// </summary>
+        /// <value>true if document scripts should run. Default value is false.</value>
         public bool JavaScript { get; set; }
+        /// <summary>
+        /// JavaScript scripts that will run before conversion.
+        /// </summary>
+        /// <value>The filename of the script to run.</value>
         public List<string> Scripts { get; } = new List<string>();
+        /// <summary>
+        /// Defines the maximum number of consequent layout passes.
+        /// </summary>
+        /// <value>
+        /// The number of maximum passes. Value must be greater than 0.
+        /// Default value is unlimited passes.
+        /// </value>
         public int MaxPasses { get; set; }
 
         // CSS options.
+        /// <summary>
+        /// CSS style sheets that will be applied to each input document.
+        /// </summary>
+        /// <value>The filename of the CSS style sheet to apply.</value>
         public List<string> StyleSheets { get; } = new List<string>();
+        /// <summary>
+        /// Specify the media type.
+        /// </summary>
+        /// <value>The media type (e.g. "print", "screen"). Default value is "print".</value>
         public string Media { get; set; }
+        /// <summary>
+        /// Ignore author style sheets.
+        /// </summary>
+        /// <value>true if author style sheets are ignored. Default value is false.</value>
         public bool NoAuthorStyle { get; set; }
+        /// <summary>
+        /// Ignore default style sheets.
+        /// </summary>
+        /// <value>true if default style sheets are ignored. Default value is false.</value>
         public bool NoDefaultStyle { get; set; }
 
         // PDF output options.
+        /// <summary>
+        /// Specify the PDF ID to use.
+        /// </summary>
+        /// <value>The PDF ID.</value>
         public string PdfId { get; set; }
+        /// <summary>
+        /// Specify the PDF document's Lang entry in the document catalog.
+        /// </summary>
+        /// <value>The PDF document's Lang entry.</value>
         public string PdfLang { get; set; }
+        /// <summary>
+        /// Specify the PDF profile to use.
+        /// </summary>
+        /// <value>The PDF profile.</value>
         public PdfProfile PdfProfile { get; set; }
+        /// <summary>
+        /// Specify the ICC profile to use.
+        /// </summary>
+        /// <value>The ICC profile.</value>
         public string PdfOutputIntent { get; set; }
+        /// <summary>
+        /// File attachments that will be attached to the PDF file.
+        /// </summary>
+        /// <value>The file attachment.</value>
         public List<FileAttachment> FileAttachments { get; } = new List<FileAttachment>();
+        /// <summary>
+        /// Specify whether artificial bold/italic fonts should be generated if
+        /// necessary.
+        /// </summary>
+        /// <value>
+        /// true if artificial bold/italic fonts are disabled. Default value is false.
+        /// </value>
         public bool NoArtificialFonts { get; set; }
+        /// <summary>
+        /// Specify whether fonts should be embedded in the output PDF file.
+        /// </summary>
+        /// <value>true if PDF font embedding is disabled. Default value is false.</value>
         public bool NoEmbedFonts { get; set; }
+        /// <summary>
+        /// Specify whether embedded fonts should be subset in the output PDF file.
+        /// </summary>
+        /// <value>true if PDF font subsetting is disabled. Default value is false.</value>
         public bool NoSubsetFonts { get; set; }
+        /// <summary>
+        /// Ensure that all fonts are encoded in the PDF using their identity encoding
+        /// (directly mapping to glyph indices), even if they could have used MacRoman
+        /// or some other encoding.
+        /// </summary>
+        /// <value>true if identity encoding is forced. Default value is false.</value>
         public bool ForceIdentityEncoding { get; set; }
+        /// <summary>
+        /// Specify whether compression should be applied to the output PDF file.
+        /// </summary>
+        /// <value>true if PDF compression is disabled. Default value is false.</value>
         public bool NoCompress { get; set; }
+        /// <summary>
+        /// Disable PDF object streams.
+        /// </summary>
+        /// <value>true if PDF object streams are disabled. Default value is false.</value>
         public bool NoObjectStreams { get; set; }
+        /// <summary>
+        /// Convert colors to output intent color space.
+        /// </summary>
+        /// <value>
+        /// true if colors are converted to output intent color space.
+        ///  Default value is false.
+        /// </value>
         public bool ConvertColors { get; set; }
+        /// <summary>
+        /// Set fallback ICC profile for uncalibrated CMYK.
+        /// </summary>
+        /// <value>The fallback ICC profile.</value>
         public string FallbackCmykProfile { get; set; }
+        /// <summary>
+        /// Enable tagged PDF.
+        /// </summary>
+        /// <value>true if tagged PDF is enabled. Default value is false.</value>
         public bool TaggedPdf { get; set; }
 
         // PDF metadata options.
+        /// <summary>
+        /// Specify the document title for PDF metadata.
+        /// </summary>
+        /// <value>The document title.</value>
         public string PdfTitle { get; set; }
+        /// <summary>
+        /// Specify the document subject for PDF metadata.
+        /// </summary>
+        /// <value>The document subject.</value>
         public string PdfSubject { get; set; }
+        /// <summary>
+        /// Specify the document author for PDF metadata.
+        /// </summary>
+        /// <value>The document author.</value>
         public string PdfAuthor { get; set; }
+        /// <summary>
+        /// Specify the document keywords for PDF metadata.
+        /// </summary>
+        /// <value>The document keywords.</value>
         public string PdfKeywords { get; set; }
+        /// <summary>
+        /// Specify the document creator for PDF metadata.
+        /// </summary>
+        /// <value>The document creator.</value>
         public string PdfCreator { get; set; }
+        /// <summary>
+        /// Specify an XMP file that contains XMP metadata to be included in the
+        /// output PDF file.
+        /// </summary>
+        /// <value>The filename of the XMP file.</value>
         public string Xmp { get; set; }
 
         // PDF encryption options.
+        /// <summary>
+        /// Specify whether encryption should be applied to the output file.
+        /// </summary>
+        /// <value>true if PDF encryption is enabled. Default value is false.</value>
         public bool Encrypt { get; set; }
+        /// <summary>
+        /// Specify the size of the encryption key.
+        /// </summary>
+        /// <value>
+        /// The size of the encryption key. Default value is <c>KeyBits.Bits128</c>.
+        /// </value>
         public KeyBits? KeyBits { get; set; }
+        /// <summary>
+        /// Specify the user password for the PDF file.
+        /// </summary>
+        /// <value>The user password.</value>
         public string UserPassword { get; set; }
+        /// <summary>
+        /// Specify the owner password for the PDF file.
+        /// </summary>
+        /// <value>The owner password.</value>
         public string OwnerPassword { get; set; }
+        /// <summary>
+        /// Disallow printing of the PDF file.
+        /// </summary>
+        /// <value>true if printing is disallowed. Default value is false.</value>
         public bool DisallowPrint { get; set; }
+        /// <summary>
+        /// Disallow modification of the PDF file.
+        /// </summary>
+        /// <value>true if modification is disallowed. Default value is false.</value>
         public bool DisallowCopy { get; set; }
+        /// <summary>
+        /// Used together with <c>DisallowCopy</c>, which creates an exception by
+        /// enabling text access for screen reader devices for the visually impaired.
+        /// </summary>
+        /// <value>true if text access is allowed. Default value is false.</value>
         public bool AllowCopyForAccessibility { get; set; }
+        /// <summary>
+        /// Disallow annotation of the PDF file.
+        /// </summary>
+        /// <value>true if annotation is disallowed. Default value is false.</value>
         public bool DisallowAnnotate { get; set; }
+        /// <summary>
+        /// Disallow modification of the PDF file.
+        /// </summary>
+        /// <value>true if modification is disallowed. Default value is false.</value>
         public bool DisallowModify { get; set; }
+        /// <summary>
+        /// Used together with <c>DisallowModify</c>, which creates an exception.
+        /// It allows the document to be inserted into another document or other
+        /// pages to be added, but the content of the document cannot be modified.
+        /// </summary>
+        /// <value>true if assembly is allowed. Default value is false.</value>
         public bool AllowAssembly { get; set; }
 
         // License options.
+        /// <summary>
+        /// Specify the license file.
+        /// </summary>
+        /// <value>The filename of the license file.</value>
         public string LicenseFile { get; set; }
+        /// <summary>
+        /// Specify the license key. This is the <c>&lt;signature&gt;</c> field in the
+        /// license file.
+        /// </summary>
+        /// <value>The license key.</value>
         public string LicenseKey { get; set; }
 
+        /// <summary>The <c>PrinceBase</c> constructor.</summary>
         protected PrinceBase(string princePath, PrinceEvents events = null) =>
             (_princePath, _events) = (princePath, events);
 
+        /// <summary>
+        /// Convert an XML or HTML file to a PDF file.
+        /// </summary>
+        /// <param name="inputPath">The filename of the input XML or HTML document.</param>
+        /// <param name="output">
+        /// The output Stream to which Prince will write the PDF output.
+        /// </param>
+        /// <returns>true if a PDF file was generated successfully.</returns>
         public abstract bool Convert(string inputPath, Stream output);
 
+        /// <summary>
+        /// Convert multiple XML or HTML files to a PDF file.
+        /// </summary>
+        /// <param name="inputPaths">The filenames of the input XML or HTML documents.</param>
+        /// <param name="output">
+        /// The output Stream to which Prince will write the PDF output.
+        /// </param>
+        /// <returns>true if a PDF file was generated successfully.</returns>
         public abstract bool Convert(List<string> inputPaths, Stream output);
 
+        /// <summary>
+        /// Convert an XML or HTML stream to a PDF file. Not that it may be helpful to
+        /// specify a base URL or path from the input document using <c>BaseUrl</c>.
+        /// This allows relative URLs and paths in the document (e.g. for images) to be
+        /// resolved correctly.
+        /// </summary>
+        /// <param name="input">
+        /// The input Stream from which Prince will read the XML or HTML document.
+        /// </param>
+        /// <param name="output">
+        /// The output Stream to which Prince will write the PDF output.
+        /// </param>
+        /// <returns>true if a PDF file was generated successfully.</returns>
         public abstract bool Convert(Stream input, Stream output);
 
+        /// <summary>
+        /// Convert an XML or HTML string to a PDF file.
+        /// </summary>
+        /// <param name="input">The XML or HTML document in the form of a string.</param>
+        /// <param name="output">
+        /// The output Stream to which Prince will write the PDF output.
+        /// </param>
+        /// <returns>true if a PDF file was generated successfully.</returns>
         public abstract bool ConvertString(string input, Stream output);
 
+        /// <summary>
+        /// Add a file attachment that will be attached to the PDF file.
+        /// </summary>
+        /// <param name="url">The URL of the file attachment.</param>
         public void AddFileAttachment(string url)
         {
             FileAttachments.Add(new FileAttachment(url));
         }
 
+        /// <summary>
+        /// Starts a Prince process.
+        /// </summary>
+        /// <param name="args">The command line arguments for Prince.</param>
+        /// <returns>The Prince process.</returns>
         protected Process StartPrince(List<string> args)
         {
             ProcessStartInfo psi = new ProcessStartInfo()
@@ -167,6 +537,10 @@ namespace PrinceXML.Wrapper
             }
         }
 
+        /// <summary>
+        /// The common base command lines used by Prince and the Prince control interface.
+        /// </summary>
+        /// <returns>A list of base command lines.</returns>
         protected List<string> GetBaseCommandLine()
         {
             List<string> cmdLine = new List<string>();
@@ -206,6 +580,11 @@ namespace PrinceXML.Wrapper
             return cmdLine;
         }
 
+        /// <summary>
+        /// Handle (structured) messages received from Prince.
+        /// </summary>
+        /// <param name="reader">The reader for messages received from Prince.</param>
+        /// <returns>true if Prince returns a "success" message.</returns>
         protected bool ReadMessages(StreamReader reader)
         {
             string result = "";
@@ -287,12 +666,25 @@ namespace PrinceXML.Wrapper
         }
     }
 
+    /// <summary>
+    /// Data class for file attachments.
+    /// </summary>
     public class FileAttachment
     {
+        /// <value>The URL of the file attachment.</value>
         public string Url { get; }
+        /// <value>The filename of the file attachment.</value>
         public string FileName { get; }
+        /// <value>The description of the file attachment.</value>
         public string Description { get; }
 
+        /// <summary>
+        /// The <c>FileAttachment</c> constructor.
+        /// </summary>
+        /// <param name="url">The URL of the file attachment.</param>
+        /// <param name="fileName">The optional filename of the file attachment.</param>
+        /// <param name="description">The optional description of the file attachment.</param>
+        /// <returns></returns>
         public FileAttachment(string url, string fileName = null, string description = null) =>
             (Url, FileName, Description) = (url, fileName, description);
     }
