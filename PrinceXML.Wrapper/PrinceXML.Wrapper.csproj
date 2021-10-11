@@ -9,7 +9,7 @@
     <RepositoryUrl>https://github.com/yeslogic/prince-csharp-wrapper</RepositoryUrl>
 
     <Title>Prince C# Wrapper</Title>
-    <Description>Prince C# Wrapper</Description>
+    <Description>A C# wrapper for Prince.</Description>
     <Product>PrinceXML.Wrapper</Product>
     <Version>1.0.0</Version>
     <Company>YesLogic Pty. Ltd.</Company>
