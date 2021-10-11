@@ -6,6 +6,7 @@
     <RootNamespace>PrinceXML.Wrapper</RootNamespace>
 
     <PackageId>PrinceXMLWrapper</PackageId>
+    <RepositoryUrl>https://github.com/yeslogic/prince-csharp-wrapper</RepositoryUrl>
 
     <Title>Prince C# Wrapper</Title>
     <Description>Prince C# Wrapper</Description>
