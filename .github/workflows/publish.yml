@@ -1,0 +1,61 @@
+name: Publish
+
+on:
+  push:
+    tags:
+      - 'v[1-9]+.[0-9]+.[0-9]+'
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Set up .NET Core SDK
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '5.0.x'
+      - name: Set up DocFx
+        uses: crazy-max/ghaction-chocolatey@v1
+        with:
+          args: install docfx
+      - name: Use README.md as DocFx home page
+        run: cp README.md docfx_project/index.md
+      - name: Build DocFx
+        working-directory: docfx_project
+        run: docfx docfx.json
+        continue-on-error: false
+      # Workaround for github-pages-deploy-action, which requires Ubuntu.
+      - name: Upload DocFx artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: site
+          path: docfx_project/_site
+
+  deploy:
+    needs: [build]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Download DocFx artifact
+        uses: actions/download-artifact@v1
+        with:
+          name: site
+      - name: Set release version
+        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+      - name: Deploy DocFx to versioned folder
+        uses: JamesIves/github-pages-deploy-action@4.1.5
+        with:
+          branch: docs
+          folder: site
+          target-folder: ${{ env.RELEASE_VERSION }}
+      - name: Deploy DocFx to latest folder
+        uses: JamesIves/github-pages-deploy-action@4.1.5
+        with:
+          branch: docs
+          folder: site
+          clean: true
+          target-folder: current
