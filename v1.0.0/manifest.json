@@ -1,0 +1,311 @@
+{
+  "homepages": [],
+  "source_base_path": "D:/a/prince-csharp-wrapper/prince-csharp-wrapper/docfx_project",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PrinceXML.Wrapper.Enums.AuthMethod.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PrinceXML.Wrapper.Enums.AuthMethod.html",
+          "hash": "Epl5rYIhjMUjQsbjulrQJXiLCXAsw1K7mL3K24v+FLE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PrinceXML.Wrapper.Enums.AuthScheme.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PrinceXML.Wrapper.Enums.AuthScheme.html",
+          "hash": "XaRCyb6IjOIe2nk8JBPV4ypBbXwPRHHuxPVnO58Glw4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PrinceXML.Wrapper.Enums.InputType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PrinceXML.Wrapper.Enums.InputType.html",
+          "hash": "xUt9MBgPCt4Qnklwddu5IgVClZfo4/lyySDLKKBhOLM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PrinceXML.Wrapper.Enums.KeyBits.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PrinceXML.Wrapper.Enums.KeyBits.html",
+          "hash": "ddh0ATS5MjOTXrz0SgQH9Nc9iaDLCGahthlslk0k5FM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PrinceXML.Wrapper.Enums.PdfProfile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PrinceXML.Wrapper.Enums.PdfProfile.html",
+          "hash": "YjLfaNZ+h5WkW1RyoNZmbVXczeNMGiXp7y166bYN3Lg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PrinceXML.Wrapper.Enums.RasterBackground.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PrinceXML.Wrapper.Enums.RasterBackground.html",
+          "hash": "YIiqb/vYRkoEpjW/H/IBd9VyQiPbIT6MF/skvxsgcpo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PrinceXML.Wrapper.Enums.RasterFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PrinceXML.Wrapper.Enums.RasterFormat.html",
+          "hash": "86/dSGxfEvzd3Rlhtcji+BnqZjG/iRfaz8VTpBRlGOc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PrinceXML.Wrapper.Enums.SslType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PrinceXML.Wrapper.Enums.SslType.html",
+          "hash": "r5Dh4MTSeTtQZUclYMATGiwRkRZcGWYKnTYYLifiO1Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PrinceXML.Wrapper.Enums.SslVersion.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PrinceXML.Wrapper.Enums.SslVersion.html",
+          "hash": "7td+Jq4QkrDig0Ehfa9wKpAolStMPXvkVyIpvQpbyYo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PrinceXML.Wrapper.Enums.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PrinceXML.Wrapper.Enums.html",
+          "hash": "0Hnpeq5wYeZahJe8yKVd95W0qtr0WnZaZbQfgClKnc4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PrinceXML.Wrapper.Events.MessageType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PrinceXML.Wrapper.Events.MessageType.html",
+          "hash": "gG82L6X5NYGBXCS12HdBYjstUDx4Z8+HRasksMRZfzQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PrinceXML.Wrapper.Events.PrinceEvents.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PrinceXML.Wrapper.Events.PrinceEvents.html",
+          "hash": "rVGhpM7HdLza5yzYEZDOvImlShYfNydCjLoDiHIetWI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PrinceXML.Wrapper.Events.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PrinceXML.Wrapper.Events.html",
+          "hash": "jdQ+DAFK4QG8iuNMiSsFGxa9RpVsrsXN+aE/xY9iN5k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PrinceXML.Wrapper.FileAttachment.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PrinceXML.Wrapper.FileAttachment.html",
+          "hash": "v7M/7VxoP+F8btl97q+XvId2dEX/QxgKKTaWsVhtpmw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PrinceXML.Wrapper.Prince.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PrinceXML.Wrapper.Prince.html",
+          "hash": "vUGUtQFhQcXUyDXxoFc8NYwS+hauBZpjPt6tHmZbKGo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PrinceXML.Wrapper.PrinceBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PrinceXML.Wrapper.PrinceBase.html",
+          "hash": "JK6Jp7rECYT4VbupkXtmKOh2ncqVgXd6wE7RPMlLzEI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PrinceXML.Wrapper.PrinceControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PrinceXML.Wrapper.PrinceControl.html",
+          "hash": "lxlXNpmbe2ul2tNxZsU12y/KBP2riNF0FyYJ7gSk+TA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PrinceXML.Wrapper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PrinceXML.Wrapper.html",
+          "hash": "GLfNlh1v7MqcrH0X4WG7iDzsz4YRcVrIpItTUhk8eb4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "5R1WMBeF0t3A0YDZA+ykPZ4DEcEec2twv8KRduVRS+U="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "BVtNeJ3ETJ75d5iqVa/WqcPAPMGroarejPg0+Za/dak="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "+KdQLoz+q2wDnE/xYFtnDIoJwIhxpn0Xb3TWMpRj/3M="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 1,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 18,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
