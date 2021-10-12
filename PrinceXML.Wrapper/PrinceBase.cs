@@ -453,7 +453,7 @@ namespace PrinceXML.Wrapper
         public abstract bool Convert(List<string> inputPaths, Stream output);
 
         /// <summary>
-        /// Convert an XML or HTML stream to a PDF file. Not that it may be helpful to
+        /// Convert an XML or HTML stream to a PDF file. Note that it may be helpful to
         /// specify a base URL or path from the input document using <c>BaseUrl</c>.
         /// This allows relative URLs and paths in the document (e.g. for images) to be
         /// resolved correctly.
