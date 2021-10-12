@@ -24,8 +24,6 @@ jobs:
         uses: crazy-max/ghaction-chocolatey@v1
         with:
           args: install docfx
-      - name: Use README.md as DocFx home page
-        run: cp README.md docfx_project/index.md
       - name: Build DocFx
         working-directory: docfx_project
         run: docfx docfx.json
