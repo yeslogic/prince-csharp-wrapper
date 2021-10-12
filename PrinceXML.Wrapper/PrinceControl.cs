@@ -24,8 +24,8 @@ namespace PrinceXML.Wrapper
         public string Version { get; private set; }
 
         private Process _process;
-        private List<string> _inputPaths = new List<string>();
-        private List<byte[]> _resources = new List<byte[]>();
+        private readonly List<string> _inputPaths = new List<string>();
+        private readonly List<byte[]> _resources = new List<byte[]>();
 
         /// <summary>
         /// Constructor for <c>PrinceControl</c>.

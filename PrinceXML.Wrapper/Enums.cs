@@ -6,13 +6,13 @@ namespace PrinceXML.Wrapper.Enums
     public class AuthMethod
     {
         /// <summary>Equates to the string <c>"basic"</c>.</summary>
-        public static AuthMethod Basic = new AuthMethod("basic");
+        public static readonly AuthMethod Basic = new AuthMethod("basic");
         /// <summary>Equates to the string <c>"digest"</c>.</summary>
-        public static AuthMethod Digest = new AuthMethod("digest");
+        public static readonly AuthMethod Digest = new AuthMethod("digest");
         /// <summary>Equates to the string <c>"ntlm"</c>.</summary>
-        public static AuthMethod Ntlm = new AuthMethod("ntlm");
+        public static readonly AuthMethod Ntlm = new AuthMethod("ntlm");
         /// <summary>Equates to the string <c>"negotiate"</c>.</summary>
-        public static AuthMethod Negotiate = new AuthMethod("negotiate");
+        public static readonly AuthMethod Negotiate = new AuthMethod("negotiate");
 
         private readonly string _name;
         private AuthMethod(string name) => _name = name;
@@ -24,9 +24,9 @@ namespace PrinceXML.Wrapper.Enums
     public class AuthScheme
     {
         /// <summary>Equates to the string <c>"http"</c>.</summary>
-        public static AuthScheme Http = new AuthScheme("http");
+        public static readonly AuthScheme Http = new AuthScheme("http");
         /// <summary>Equates to the string <c>"https"</c>.</summary>
-        public static AuthScheme Https = new AuthScheme("https");
+        public static readonly AuthScheme Https = new AuthScheme("https");
 
         private readonly string _name;
         private AuthScheme(string name) => _name = name;
@@ -38,11 +38,11 @@ namespace PrinceXML.Wrapper.Enums
     public class InputType
     {
         /// <summary>Equates to the string <c>"auto"</c>.</summary>
-        public static InputType Auto = new InputType("auto");
+        public static readonly InputType Auto = new InputType("auto");
         /// <summary>Equates to the string <c>"html"</c>.</summary>
-        public static InputType Html = new InputType("html");
+        public static readonly InputType Html = new InputType("html");
         /// <summary>Equates to the string <c>"xml"</c>.</summary>
-        public static InputType Xml = new InputType("xml");
+        public static readonly InputType Xml = new InputType("xml");
 
         private readonly string _name;
         private InputType(string name) => _name = name;
@@ -63,35 +63,35 @@ namespace PrinceXML.Wrapper.Enums
     public class PdfProfile
     {
         /// <summary>Equates to the string <c>"PDF/A-1a"</c>.</summary>
-        public static PdfProfile PdfA_1A = new PdfProfile("PDF/A-1a");
+        public static readonly PdfProfile PdfA_1A = new PdfProfile("PDF/A-1a");
         /// <summary>Equates to the string <c>"PDF/A-1a+PDF/UA-1"</c>.</summary>
-        public static PdfProfile PdfA_1A_And_PdfUA_1 = new PdfProfile("PDF/A-1a+PDF/UA-1");
+        public static readonly PdfProfile PdfA_1A_And_PdfUA_1 = new PdfProfile("PDF/A-1a+PDF/UA-1");
         /// <summary>Equates to the string <c>"PDF/A-1b"</c>.</summary>
-        public static PdfProfile PdfA_1B = new PdfProfile("PDF/A-1b");
+        public static readonly PdfProfile PdfA_1B = new PdfProfile("PDF/A-1b");
         /// <summary>Equates to the string <c>"PDF/A-2a"</c>.</summary>
-        public static PdfProfile PdfA_2A = new PdfProfile("PDF/A-2a");
+        public static readonly PdfProfile PdfA_2A = new PdfProfile("PDF/A-2a");
         /// <summary>Equates to the string <c>"PDF/A-2a+PDF/UA-1"</c>.</summary>
-        public static PdfProfile PdfA_2A_And_PdfUA_1 = new PdfProfile("PDF/A-2a+PDF/UA-1");
+        public static readonly PdfProfile PdfA_2A_And_PdfUA_1 = new PdfProfile("PDF/A-2a+PDF/UA-1");
         /// <summary>Equates to the string <c>"PDF/A-2b"</c>.</summary>
-        public static PdfProfile PdfA_2B = new PdfProfile("PDF/A-2b");
+        public static readonly PdfProfile PdfA_2B = new PdfProfile("PDF/A-2b");
         /// <summary>Equates to the string <c>"PDF/A-3a"</c>.</summary>
-        public static PdfProfile PdfA_3A = new PdfProfile("PDF/A-3a");
+        public static readonly PdfProfile PdfA_3A = new PdfProfile("PDF/A-3a");
         /// <summary>Equates to the string <c>"PDF/A-3a+PDF/UA-1"</c>.</summary>
-        public static PdfProfile PdfA_3A_And_PdfUA_1 = new PdfProfile("PDF/A-3a+PDF/UA-1");
+        public static readonly PdfProfile PdfA_3A_And_PdfUA_1 = new PdfProfile("PDF/A-3a+PDF/UA-1");
         /// <summary>Equates to the string <c>"PDF/A-3b"</c>.</summary>
-        public static PdfProfile PdfA_3B = new PdfProfile("PDF/A-3b");
+        public static readonly PdfProfile PdfA_3B = new PdfProfile("PDF/A-3b");
         /// <summary>Equates to the string <c>"PDF/UA-1"</c>.</summary>
-        public static PdfProfile PdfUA_1 = new PdfProfile("PDF/UA-1");
+        public static readonly PdfProfile PdfUA_1 = new PdfProfile("PDF/UA-1");
         /// <summary>Equates to the string <c>"PDF/X-1a:2001"</c>.</summary>
-        public static PdfProfile PdfX_1A_2001 = new PdfProfile("PDF/X-1a:2001");
+        public static readonly PdfProfile PdfX_1A_2001 = new PdfProfile("PDF/X-1a:2001");
         /// <summary>Equates to the string <c>"PDF/X-1a:2003"</c>.</summary>
-        public static PdfProfile PdfX_1A_2003 = new PdfProfile("PDF/X-1a:2003");
+        public static readonly PdfProfile PdfX_1A_2003 = new PdfProfile("PDF/X-1a:2003");
         /// <summary>Equates to the string <c>"PDF/X-3:2002"</c>.</summary>
-        public static PdfProfile PdfX_3_2002 = new PdfProfile("PDF/X-3:2002");
+        public static readonly PdfProfile PdfX_3_2002 = new PdfProfile("PDF/X-3:2002");
         /// <summary>Equates to the string <c>"PDF/X-3:2003"</c>.</summary>
-        public static PdfProfile PdfX_3_2003 = new PdfProfile("PDF/X-3:2003");
+        public static readonly PdfProfile PdfX_3_2003 = new PdfProfile("PDF/X-3:2003");
         /// <summary>Equates to the string <c>"PDF/X-4"</c>.</summary>
-        public static PdfProfile PdfX_4 = new PdfProfile("PDF/X-4");
+        public static readonly PdfProfile PdfX_4 = new PdfProfile("PDF/X-4");
 
         private readonly string _name;
         private PdfProfile(string name) => _name = name;
@@ -103,9 +103,9 @@ namespace PrinceXML.Wrapper.Enums
     public class RasterBackground
     {
         /// <summary>Equates to the string <c>"white"</c>.</summary>
-        public static RasterBackground White = new RasterBackground("white");
+        public static readonly RasterBackground White = new RasterBackground("white");
         /// <summary>Equates to the string <c>"transparent"</c>.</summary>
-        public static RasterBackground Transparent = new RasterBackground("transparent");
+        public static readonly RasterBackground Transparent = new RasterBackground("transparent");
 
         private readonly string _name;
         private RasterBackground(string name) => _name = name;
@@ -117,11 +117,11 @@ namespace PrinceXML.Wrapper.Enums
     public class RasterFormat
     {
         /// <summary>Equates to the string <c>"auto"</c>.</summary>
-        public static RasterFormat Auto = new RasterFormat("auto");
+        public static readonly RasterFormat Auto = new RasterFormat("auto");
         /// <summary>Equates to the string <c>"png"</c>.</summary>
-        public static RasterFormat Png = new RasterFormat("png");
+        public static readonly RasterFormat Png = new RasterFormat("png");
         /// <summary>Equates to the string <c>"jpeg"</c>.</summary>
-        public static RasterFormat Jpeg = new RasterFormat("jpeg");
+        public static readonly RasterFormat Jpeg = new RasterFormat("jpeg");
 
         private readonly string _name;
         private RasterFormat(string name) => _name = name;
@@ -133,9 +133,9 @@ namespace PrinceXML.Wrapper.Enums
     public class SslType
     {
         /// <summary>Equates to the string <c>"PEM"</c>.</summary>
-        public static SslType Pem = new SslType("PEM");
+        public static readonly SslType Pem = new SslType("PEM");
         /// <summary>Equates to the string <c>"DER"</c>.</summary>
-        public static SslType Der = new SslType("DER");
+        public static readonly SslType Der = new SslType("DER");
 
         private readonly string _name;
         private SslType(string name) => _name = name;
@@ -147,17 +147,17 @@ namespace PrinceXML.Wrapper.Enums
     public class SslVersion
     {
         /// <summary>Equates to the string <c>"default"</c>.</summary>
-        public static SslVersion Default = new SslVersion("default");
+        public static readonly SslVersion Default = new SslVersion("default");
         /// <summary>Equates to the string <c>"tlsv1"</c>.</summary>
-        public static SslVersion TlsV1 = new SslVersion("tlsv1");
+        public static readonly SslVersion TlsV1 = new SslVersion("tlsv1");
         /// <summary>Equates to the string <c>"tlsv1.0"</c>.</summary>
-        public static SslVersion TlsV1_0 = new SslVersion("tlsv1.0");
+        public static readonly SslVersion TlsV1_0 = new SslVersion("tlsv1.0");
         /// <summary>Equates to the string <c>"tlsv1.1"</c>.</summary>
-        public static SslVersion TlsV1_1 = new SslVersion("tlsv1.1");
+        public static readonly SslVersion TlsV1_1 = new SslVersion("tlsv1.1");
         /// <summary>Equates to the string <c>"tlsv1.2"</c>.</summary>
-        public static SslVersion TlsV1_2 = new SslVersion("tlsv1.2");
+        public static readonly SslVersion TlsV1_2 = new SslVersion("tlsv1.2");
         /// <summary>Equates to the string <c>"tlsv1.3"</c>.</summary>
-        public static SslVersion TlsV1_3 = new SslVersion("tlsv1.3");
+        public static readonly SslVersion TlsV1_3 = new SslVersion("tlsv1.3");
 
         private readonly string _name;
         private SslVersion(string name) => _name = name;

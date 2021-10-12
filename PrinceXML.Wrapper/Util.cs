@@ -28,7 +28,7 @@ namespace PrinceXML.Wrapper.Util
 
     internal class Json
     {
-        private StringBuilder _builder;
+        private readonly StringBuilder _builder;
         private bool _comma;
 
         public Json()

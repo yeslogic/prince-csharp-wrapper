@@ -15,8 +15,8 @@ namespace PrinceXML.Wrapper
     /// <summary>Base class for <c>Prince</c> and <c>PrinceControl</c>.</summary>
     public abstract class PrinceBase
     {
-        private string _princePath;
-        private PrinceEvents _events;
+        private readonly string _princePath;
+        private readonly PrinceEvents _events;
 
         // Logging options.
         /// <summary>
