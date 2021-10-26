@@ -277,6 +277,7 @@ namespace PrinceXML.Wrapper.Tests
             P.ConvertColors = true;
             P.FallbackCmykProfile = "x";
             P.TaggedPdf = true;
+            P.PdfForms = true;
             P.CssDpi = 100;
 
             P.PdfTitle = "x";

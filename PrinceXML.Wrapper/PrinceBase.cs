@@ -324,6 +324,11 @@ namespace PrinceXML.Wrapper
         /// </summary>
         /// <value>true if tagged PDF is enabled. Default value is false.</value>
         public bool TaggedPdf { get; set; }
+        /// <summary>
+        /// Enable PDF forms by default.
+        /// </summary>
+        /// <value>true if PDF forms is enabled by default. Default value is false.</value>
+        public bool PdfForms { get; set; }
 
         // PDF metadata options.
         /// <summary>

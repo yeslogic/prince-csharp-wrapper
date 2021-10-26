@@ -236,6 +236,7 @@ namespace PrinceXML.Wrapper
             if (PdfLang != null) { json.Field("pdf-lang", PdfLang); }
             if (Xmp != null) { json.Field("pdf-xmp", Xmp); }
             json.Field("tagged-pdf", TaggedPdf);
+            json.Field("pdf-forms", PdfForms);
 
             json.BeginList("attach");
             foreach (FileAttachment fa in FileAttachments)

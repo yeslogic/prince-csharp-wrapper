@@ -469,6 +469,7 @@ namespace PrinceXML.Wrapper
             if (ConvertColors) { cmdLine.Add(ToCommand("convert-colors")); }
             if (FallbackCmykProfile != null) { cmdLine.Add(ToCommand("fallback-cmyk-profile", FallbackCmykProfile)); }
             if (TaggedPdf) { cmdLine.Add(ToCommand("tagged-pdf")); }
+            if (PdfForms) { cmdLine.Add(ToCommand("pdf-forms")); }
             if (CssDpi > 0) {cmdLine.Add(ToCommand("css-dpi", CssDpi)); }
 
             if (PdfTitle != null) { cmdLine.Add(ToCommand("pdf-title", PdfTitle)); }
