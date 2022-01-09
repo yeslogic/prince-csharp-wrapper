@@ -38,7 +38,7 @@ jobs:
       - name: Generate NuGet package
         working-directory: PrinceXML.Wrapper
         run: dotnet pack -c Release
-      - name: Publish BuGet package
+      - name: Publish NuGet package
         working-directory: PrinceXML.Wrapper/bin/Release
         run: dotnet nuget push *.nupkg
 
