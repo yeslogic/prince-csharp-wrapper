@@ -12,15 +12,8 @@ URL, e.g.
 
 ## Download
 
-This wrapper is hosted on the [GitHub Packages (NuGet) Registry][3]. Installing
-this package requires authenticating to GitHub Packages with a
-[personal access token][4]. Ensure that the personal access token has registry
-read access.
-
-Alternatively, the NuGet package can be [downloaded directly][3] via the links
-on the sidebar.
+This wrapper is hosted on the [NuGet Gallery][3].
 
 [1]: https://www.princexml.com/
 [2]: https://yeslogic.github.io/prince-csharp-wrapper
-[3]: https://github.com/yeslogic/prince-csharp-wrapper/packages/1039110
-[4]: https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-nuget-registry#authenticating-with-a-personal-access-token
+[3]: https://www.nuget.org/packages/PrinceXMLWrapper
