@@ -7,6 +7,7 @@
 
     <PackageId>PrinceXMLWrapper</PackageId>
     <RepositoryUrl>https://github.com/yeslogic/prince-csharp-wrapper</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/yeslogic/prince-csharp-wrapper</PackageProjectUrl>
 
     <Title>Prince C# Wrapper</Title>
     <Description>A C# wrapper for Prince.</Description>
@@ -15,6 +16,7 @@
     <Company>YesLogic Pty. Ltd.</Company>
     <Authors>YesLogic Pty. Ltd.</Authors>
     <Copyright>Copyright (C) 2021 YesLogic Pty. Ltd.</Copyright>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
 
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
@@ -23,6 +25,7 @@
     <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
       <_Parameter1>PrinceXML.Wrapper.Tests</_Parameter1>
     </AssemblyAttribute>
+    <None Include="..\LICENSE" Pack="true" PackagePath="" />
   </ItemGroup>
 
 </Project>
