@@ -17,6 +17,7 @@
     <Authors>YesLogic Pty. Ltd.</Authors>
     <Copyright>Copyright (C) 2021 YesLogic Pty. Ltd.</Copyright>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
 
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
@@ -26,6 +27,7 @@
       <_Parameter1>PrinceXML.Wrapper.Tests</_Parameter1>
     </AssemblyAttribute>
     <None Include="..\LICENSE" Pack="true" PackagePath="" />
+    <None Include="..\README.md" Pack="true" PackagePath="" />
   </ItemGroup>
 
 </Project>
