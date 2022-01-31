@@ -1546,6 +1546,19 @@ references:
   isSpec: "True"
   fullName: PrinceXML.Wrapper.PrinceBase.PdfCreator
   nameWithType: PrinceBase.PdfCreator
+- uid: PrinceXML.Wrapper.PrinceBase.PdfForms
+  name: PdfForms
+  href: api/PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_PdfForms
+  commentId: P:PrinceXML.Wrapper.PrinceBase.PdfForms
+  fullName: PrinceXML.Wrapper.PrinceBase.PdfForms
+  nameWithType: PrinceBase.PdfForms
+- uid: PrinceXML.Wrapper.PrinceBase.PdfForms*
+  name: PdfForms
+  href: api/PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_PdfForms_
+  commentId: Overload:PrinceXML.Wrapper.PrinceBase.PdfForms
+  isSpec: "True"
+  fullName: PrinceXML.Wrapper.PrinceBase.PdfForms
+  nameWithType: PrinceBase.PdfForms
 - uid: PrinceXML.Wrapper.PrinceBase.PdfId
   name: PdfId
   href: api/PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_PdfId
