@@ -231,6 +231,12 @@ namespace PrinceXML.Wrapper
 
             if (PdfProfile != null) { json.Field("pdf-profile", PdfProfile.ToString()); }
             if (PdfOutputIntent != null) { json.Field("pdf-output-intent", PdfOutputIntent); }
+            if (PdfScript != null)
+            {
+                json.BeginObj("pdf-script");
+                json.Field("url", PdfScript);
+                json.EndObj();
+            }
             if (FallbackCmykProfile != null) { json.Field("fallback-cmyk-profile", FallbackCmykProfile); }
             json.Field("color-conversion", ConvertColors ? "output-intent" : "none");
             if (PdfId != null) { json.Field("pdf-id", PdfId); }
@@ -283,6 +289,16 @@ namespace PrinceXML.Wrapper
         {
             _resources.Add(styleSheet);
             StyleSheets.Add("job-resource:" + (_resources.Count - 1));
+        }
+
+        /// <summary>
+        /// Include an AcroJS script to run when the PDF is opened.
+        /// </summary>
+        /// <param name="pdfScript">The AcroJS script as a byte array.</param>
+        public void SetPdfScript(byte[] pdfScript)
+        {
+            _resources.Add(pdfScript);
+            PdfScript = "job-resource:" + (_resources.Count - 1);
         }
 
         /// <summary>

@@ -459,6 +459,7 @@ namespace PrinceXML.Wrapper
             if (PdfLang != null) { cmdLine.Add(ToCommand("pdf-lang", PdfLang)); }
             if (PdfProfile != null) { cmdLine.Add(ToCommand("pdf-profile", PdfProfile)); }
             if (PdfOutputIntent != null) { cmdLine.Add(ToCommand("pdf-output-intent", PdfOutputIntent)); }
+            if (PdfScript != null) { cmdLine.Add(ToCommand("pdf-script", PdfScript)); }
             if (FileAttachments.Any()) { cmdLine.AddRange(ToCommands("attach", FileAttachments.Select(a => a.Url))); }
             if (NoArtificialFonts) { cmdLine.Add(ToCommand("no-artificial-fonts")); }
             if (NoEmbedFonts) { cmdLine.Add(ToCommand("no-embed-fonts")); }

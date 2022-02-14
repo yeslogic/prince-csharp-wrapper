@@ -138,6 +138,7 @@ namespace PrinceXML.Wrapper.Tests
 
             P.PdfProfile = PdfProfile.PdfA_1A_And_PdfUA_1;
             P.PdfOutputIntent = "x";
+            P.PdfScript = "x";
             P.FallbackCmykProfile = "x";
             P.ConvertColors = true;
             P.PdfId = "x";
