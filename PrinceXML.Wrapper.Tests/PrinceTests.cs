@@ -266,6 +266,10 @@ namespace PrinceXML.Wrapper.Tests
             P.PdfProfile = PdfProfile.PdfA_1A;
             P.PdfOutputIntent = "x";
             P.PdfScript = "x";
+            P.PdfEventScripts[PdfEvent.WillPrint] = "w";
+            P.PdfEventScripts[PdfEvent.WillClose] = "x";
+            P.PdfEventScripts[PdfEvent.WillClose] = "y";
+            P.PdfEventScripts[PdfEvent.DidPrint] = "z";
             P.AddFileAttachment("x");
             P.AddFileAttachment("y");
             P.NoArtificialFonts = true;
