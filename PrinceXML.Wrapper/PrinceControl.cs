@@ -237,6 +237,17 @@ namespace PrinceXML.Wrapper
                 json.Field("url", PdfScript);
                 json.EndObj();
             }
+            if (PdfEventScripts.Count > 0)
+            {
+                json.BeginObj("pdf-event-scripts");
+                foreach (KeyValuePair<PdfEvent, string> p in PdfEventScripts)
+                {
+                    json.BeginObj(p.Key.ToString());
+                    json.Field("url", p.Value);
+                    json.EndObj();
+                }
+                json.EndObj();
+            }
             if (FallbackCmykProfile != null) { json.Field("fallback-cmyk-profile", FallbackCmykProfile); }
             json.Field("color-conversion", ConvertColors ? "output-intent" : "none");
             if (PdfId != null) { json.Field("pdf-id", PdfId); }
@@ -299,6 +310,17 @@ namespace PrinceXML.Wrapper
         {
             _resources.Add(pdfScript);
             PdfScript = "job-resource:" + (_resources.Count - 1);
+        }
+
+        /// <summary>
+        /// Include an AcrosJS script to run on a specific event.
+        /// </summary>
+        /// <param name="pdfEvent">The PDF event.</param>
+        /// <param name="pdfScript">The AcroJS script as a byte array.</param>
+        public void AddPdfEventScript(PdfEvent pdfEvent, byte[] pdfScript)
+        {
+            _resources.Add(pdfScript);
+            PdfEventScripts[pdfEvent] = "job-resource:" + (_resources.Count - 1);
         }
 
         /// <summary>

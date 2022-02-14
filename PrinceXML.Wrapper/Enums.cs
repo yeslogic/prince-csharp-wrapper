@@ -59,6 +59,26 @@ namespace PrinceXML.Wrapper.Enums
         Bits128 = 128
     }
 
+    /// <summary>PDF events.</summary>
+    public class PdfEvent
+    {
+        /// <summary>Equates to the string <c>"will-close"</c>.</summary>
+        public static readonly PdfEvent WillClose = new PdfEvent("will-close");
+        /// <summary>Equates to the string <c>"will-save"</c>.</summary>
+        public static readonly PdfEvent WillSave = new PdfEvent("will-save");
+        /// <summary>Equates to the string <c>"did-save"</c>.</summary>
+        public static readonly PdfEvent DidSave = new PdfEvent("did-save");
+        /// <summary>Equates to the string <c>"will-print"</c>.</summary>
+        public static readonly PdfEvent WillPrint = new PdfEvent("will-print");
+        /// <summary>Equates to the string <c>"did-print"</c>.</summary>
+        public static readonly PdfEvent DidPrint = new PdfEvent("did-print");
+
+        private readonly string _name;
+        private PdfEvent(string name) => _name = name;
+        /// <summary>Returns a string representation of the object.</summary>
+        public override string ToString() => _name;
+    }
+
     /// <summary>PDF profiles.</summary>
     public class PdfProfile
     {

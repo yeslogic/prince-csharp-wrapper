@@ -277,6 +277,11 @@ namespace PrinceXML.Wrapper
         /// <value>The filename or URL of the AcroJS script.</value>
         public string PdfScript { get; set; }
         /// <summary>
+        /// Include an AcrosJS script to run on a specific event.
+        /// </summary>
+        /// <value>A mapping of PDF events to the filenames or URLs of the AcroJS scripts.</value>
+        public Dictionary<PdfEvent, string> PdfEventScripts { get; } = new Dictionary<PdfEvent, string>();
+        /// <summary>
         /// File attachments that will be attached to the PDF file.
         /// </summary>
         /// <value>The file attachment.</value>

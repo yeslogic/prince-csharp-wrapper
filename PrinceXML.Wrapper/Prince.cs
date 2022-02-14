@@ -460,6 +460,10 @@ namespace PrinceXML.Wrapper
             if (PdfProfile != null) { cmdLine.Add(ToCommand("pdf-profile", PdfProfile)); }
             if (PdfOutputIntent != null) { cmdLine.Add(ToCommand("pdf-output-intent", PdfOutputIntent)); }
             if (PdfScript != null) { cmdLine.Add(ToCommand("pdf-script", PdfScript)); }
+            foreach (KeyValuePair<PdfEvent, string> p in PdfEventScripts)
+            {
+                cmdLine.Add(ToCommand("pdf-event-script", p.Key + ":" + p.Value));
+            }
             if (FileAttachments.Any()) { cmdLine.AddRange(ToCommands("attach", FileAttachments.Select(a => a.Url))); }
             if (NoArtificialFonts) { cmdLine.Add(ToCommand("no-artificial-fonts")); }
             if (NoEmbedFonts) { cmdLine.Add(ToCommand("no-embed-fonts")); }
