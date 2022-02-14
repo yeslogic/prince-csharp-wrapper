@@ -243,6 +243,7 @@ namespace PrinceXML.Wrapper.Tests
             P.BaseUrl = ".";
             P.Remaps.Add(("x", "y"));
             P.Remaps.Add(("i", "j"));
+            P.Iframes = true;
             P.XInclude = true;
             P.XmlExternalEntities = true;
             P.NoLocalFiles = true;
