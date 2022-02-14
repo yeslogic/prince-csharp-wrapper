@@ -265,6 +265,7 @@ namespace PrinceXML.Wrapper.Tests
             P.PdfLang = "x";
             P.PdfProfile = PdfProfile.PdfA_1A;
             P.PdfOutputIntent = "x";
+            P.PdfScript = "x";
             P.AddFileAttachment("x");
             P.AddFileAttachment("y");
             P.NoArtificialFonts = true;

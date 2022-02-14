@@ -272,6 +272,11 @@ namespace PrinceXML.Wrapper
         /// <value>The ICC profile.</value>
         public string PdfOutputIntent { get; set; }
         /// <summary>
+        /// Include an AcroJS script to run when the PDF is opened.
+        /// </summary>
+        /// <value>The filename or URL of the AcroJS script.</value>
+        public string PdfScript { get; set; }
+        /// <summary>
         /// File attachments that will be attached to the PDF file.
         /// </summary>
         /// <value>The file attachment.</value>
