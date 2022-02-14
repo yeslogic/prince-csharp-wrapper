@@ -439,6 +439,7 @@ namespace PrinceXML.Wrapper
             if (InputType != null) { cmdLine.Add(ToCommand("input", InputType)); }
             if (BaseUrl != null) { cmdLine.Add(ToCommand("baseurl", BaseUrl)); }
             if (Remaps.Any()) { cmdLine.AddRange(ToCommands("remap", Remaps.Select((u, d) => $"{u}={d}"))); }
+            if (Iframes) { cmdLine.Add(ToCommand("iframes")); }
             if (XInclude) { cmdLine.Add(ToCommand("xinclude")); }
             if (XmlExternalEntities) { cmdLine.Add(ToCommand("xml-external-entities")); }
             if (NoLocalFiles) { cmdLine.Add(ToCommand("no-local-files")); }

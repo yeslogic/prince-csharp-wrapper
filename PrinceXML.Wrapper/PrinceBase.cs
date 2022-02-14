@@ -65,6 +65,11 @@ namespace PrinceXML.Wrapper
         /// <value>The base URL or path of the input document.</value>
         public string BaseUrl { get; set; }
         /// <summary>
+        /// Enable HTML iframes.
+        /// </summary>
+        /// <value>true if HTML iframes is enabled. Default value is false.</value>
+        public bool Iframes { get; set; }
+        /// <summary>
         /// Enable XInclude and XML external entities (XXE). Note that XInclude only
         /// applies to XML files. To apply it to HTML files, the input format needs
         /// to be specified by setting <c>InputType</c>.

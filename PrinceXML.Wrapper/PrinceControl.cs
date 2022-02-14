@@ -204,6 +204,7 @@ namespace PrinceXML.Wrapper
             json.Field("author-style", !NoAuthorStyle);
             json.Field("javascript", JavaScript);
             if (MaxPasses > 0) { json.Field("max-passes", MaxPasses); }
+            json.Field("iframes", Iframes);
             json.Field("xinclude", XInclude);
             json.Field("xml-external-entities", XmlExternalEntities);
             json.EndObj();

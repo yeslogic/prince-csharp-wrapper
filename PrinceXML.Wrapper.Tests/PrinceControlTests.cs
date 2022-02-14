@@ -115,6 +115,7 @@ namespace PrinceXML.Wrapper.Tests
             P.NoAuthorStyle = true;
             P.JavaScript = true;
             P.MaxPasses = 5;
+            P.Iframes = true;
             P.XInclude = true;
             P.XmlExternalEntities = true;
 
