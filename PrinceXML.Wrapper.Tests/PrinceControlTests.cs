@@ -12,7 +12,7 @@ namespace PrinceXML.Wrapper.Tests
     // End-to-end tests. Disabled by default.
     public class PrinceControlTests : IDisposable
     {
-        // Hack to disable tests. Uncomment to re-enable.
+        // Hack to disable tests. Comment to re-enable.
         private class FactAttribute : Attribute {}
 
         public class Events : PrinceEvents
