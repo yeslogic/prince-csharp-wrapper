@@ -237,6 +237,34 @@ namespace PrinceXML.Wrapper.Tests
         }
 
         [Fact]
+        public void FailSafe()
+        {
+            Assert.False(P.FailDroppedContent);
+            Assert.False(P.FailMissingResources);
+            Assert.False(P.FailStrippedTransparency);
+            Assert.False(P.FailMissingGlyphs);
+            Assert.False(P.FailPdfProfileError);
+            Assert.False(P.FailPdfTagError);
+            Assert.False(P.FailInvalidLicense);
+
+            P.FailSafe(true);
+
+            Assert.True(P.FailDroppedContent);
+            Assert.True(P.FailMissingResources);
+            Assert.True(P.FailStrippedTransparency);
+            Assert.True(P.FailMissingGlyphs);
+            Assert.True(P.FailPdfProfileError);
+            Assert.True(P.FailPdfTagError);
+            Assert.True(P.FailInvalidLicense);
+
+            // Discard output.
+            using (MemoryStream ms = new MemoryStream())
+            {
+                Assert.True(P.Convert(InputPath, ms), E.Msg);
+            }
+        }
+
+        [Fact]
         public void JobOptionKeys()
         {
             P.InputType = InputType.Html;
