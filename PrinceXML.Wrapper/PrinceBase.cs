@@ -700,7 +700,7 @@ namespace PrinceXML.Wrapper
                 }
                 else
                 {
-                    // Ignore too-short messages.
+                    HandleNonStructuredMessage(line);
                 }
                 line = reader.ReadLine();
             }
@@ -749,6 +749,30 @@ namespace PrinceXML.Wrapper
             else
             {
                 // Ignore incorrectly-formatted messages.
+            }
+        }
+
+        private void HandleNonStructuredMessage(string msg)
+        {
+            const string princeWrn = "prince: warning: ";
+            const string princeErr = "prince: error: ";
+
+            if (_events == null) { return; }
+
+            if (msg.StartsWith(princeWrn))
+            {
+                string msgText = msg.Substring(princeWrn.Length);
+                _events.OnMessage(MessageType.WRN, "", msgText);
+            }
+            else if (msg.StartsWith(princeErr))
+            {
+                string msgText = msg.Substring(princeErr.Length);
+                _events.OnMessage(MessageType.ERR, "", msgText);
+            }
+            else
+            {
+                // Just treat everything else as debug messages.
+                _events.OnMessage(MessageType.DBG, "", msg);
             }
         }
     }
