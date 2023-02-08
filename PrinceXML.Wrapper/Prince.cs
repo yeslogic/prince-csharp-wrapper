@@ -112,7 +112,10 @@ namespace PrinceXML.Wrapper
         /// <summary>
         /// Specify additional Prince command-line options.
         /// </summary>
-        /// <value>The command line option, comprised of a key and an optional value.</value>
+        /// <value>
+        /// The command line option, comprised of a key and an optional value.
+        /// Pass in a <c>null</c> if the value is not required.
+        /// </value>
         public List<(string, string)> Options { get; } = new List<(string, string)>();
 
         /// <summary>
