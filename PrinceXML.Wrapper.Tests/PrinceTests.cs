@@ -21,12 +21,12 @@ namespace PrinceXML.Wrapper.Tests
 
             public void OnMessage(MessageType msgType, string msgLocation, string msgText)
             {
-                Msg = msgType.ToString() + " " + msgLocation + " " + msgText;
+                Msg += msgType.ToString() + " " + msgLocation + " " + msgText + "\n";
             }
 
             public void OnDataMessage(string name, string value)
             {
-                Msg = "DAT " + name + " " + value;
+                Msg += "DAT " + name + " " + value + "\n";
             }
         }
 
