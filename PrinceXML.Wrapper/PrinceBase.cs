@@ -448,6 +448,50 @@ namespace PrinceXML.Wrapper
         /// <value>The license key.</value>
         public string LicenseKey { get; set; }
 
+        // Advanced options.
+        /// <summary>
+        /// Fail-safe option that aborts the creation of a PDF if any content is
+        /// dropped.
+        /// </summary>
+        /// <value>true if fail-safe option is enabled. Default value is false.</value>
+        public bool FailDroppedContent { get; set; }
+        /// <summary>
+        /// Fail-safe option that aborts the creation of a PDF if any resources
+        /// cannot be loaded.
+        /// </summary>
+        /// <value>true if fail-safe option is enabled. Default value is false.</value>
+        public bool FailMissingResources { get; set; }
+        /// <summary>
+        /// Fail-safe option that aborts the creation of a PDF if transparent
+        /// images are used with a PDF profile that does not support opacity.
+        /// </summary>
+        /// <value>true if fail-safe option is enabled. Default value is false.</value>
+        public bool FailStrippedTransparency { get; set; }
+        /// <summary>
+        /// Fail-safe option that aborts the creation of a PDF if glyphs cannot
+        /// be found for any characters.
+        /// </summary>
+        /// <value>true if fail-safe option is enabled. Default value is false.</value>
+        public bool FailMissingGlyphs { get; set; }
+        /// <summary>
+        /// Fail-safe option that aborts the creation of a PDF if there are
+        /// problems complying with the specified PDF profile.
+        /// </summary>
+        /// <value>true if fail-safe option is enabled. Default value is false.</value>
+        public bool FailPdfProfileError { get; set; }
+        /// <summary>
+        /// Fail-safe option that aborts the creation of a PDF if there are
+        /// problems tagging the PDF for accessibility.
+        /// </summary>
+        /// <value>true if fail-safe option is enabled. Default value is false.</value>
+        public bool FailPdfTagError { get; set; }
+        /// <summary>
+        /// Fail-safe option that aborts the creation of a PDF if the Prince
+        /// license is invalid or not readable.
+        /// </summary>
+        /// <value>true if fail-safe option is enabled. Default value is false.</value>
+        public bool FailInvalidLicense { get; set; }
+
         /// <summary>The <c>PrinceBase</c> constructor.</summary>
         protected PrinceBase(string princePath, PrinceEvents events = null) =>
             (_princePath, _events) = (princePath, events);
@@ -504,6 +548,21 @@ namespace PrinceXML.Wrapper
         public void AddFileAttachment(string url)
         {
             FileAttachments.Add(new FileAttachment(url));
+        }
+
+        /// <summary>
+        /// Enables/disables all fail-safe options.
+        /// </summary>
+        /// <param name="failSafe">The value to set all fail-safe options to.</param>
+        public void FailSafe(bool failSafe)
+        {
+            FailDroppedContent = failSafe;
+            FailMissingResources = failSafe;
+            FailStrippedTransparency = failSafe;
+            FailMissingGlyphs = failSafe;
+            FailPdfProfileError = failSafe;
+            FailPdfTagError = failSafe;
+            FailInvalidLicense = failSafe;
         }
 
         /// <summary>
@@ -596,6 +655,14 @@ namespace PrinceXML.Wrapper
 
             if (LicenseFile != null) { cmdLine.Add(ToCommand("license-file", LicenseFile)); }
             if (LicenseKey != null) { cmdLine.Add(ToCommand("license-key", LicenseKey)); }
+
+            if(FailDroppedContent) { cmdLine.Add(ToCommand("fail-dropped-content")); };
+            if(FailMissingResources) { cmdLine.Add(ToCommand("fail-missing-resources")); };
+            if(FailStrippedTransparency) { cmdLine.Add(ToCommand("fail-stripped-transparency")); };
+            if(FailMissingGlyphs) { cmdLine.Add(ToCommand("fail-missing-glyphs")); };
+            if(FailPdfProfileError) { cmdLine.Add(ToCommand("fail-pdf-profile-error")); };
+            if(FailPdfTagError) { cmdLine.Add(ToCommand("fail-pdf-tag-error")); };
+            if(FailInvalidLicense) { cmdLine.Add(ToCommand("fail-invalid-license")); };
 
             return cmdLine;
         }
