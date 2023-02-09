@@ -1,0 +1,952 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class PrinceControl
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class PrinceControl
+   ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="PrinceXML.Wrapper.PrinceControl">
+  
+  
+  <h1 id="PrinceXML_Wrapper_PrinceControl" data-uid="PrinceXML.Wrapper.PrinceControl" class="text-break">Class PrinceControl
+  </h1>
+  <div class="markdown level0 summary"><p>Class for creating persistent Prince control processes that can be used for
+multiple consecutive document conversions.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="PrinceXML.Wrapper.PrinceBase.html">PrinceBase</a></div>
+    <div class="level2"><span class="xref">PrinceControl</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_Verbose">PrinceBase.Verbose</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_Debug">PrinceBase.Debug</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_Log">PrinceBase.Log</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_NoWarnCssUnknown">PrinceBase.NoWarnCssUnknown</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_NoWarnCssUnsupported">PrinceBase.NoWarnCssUnsupported</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_InputType">PrinceBase.InputType</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_BaseUrl">PrinceBase.BaseUrl</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_Iframes">PrinceBase.Iframes</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_XInclude">PrinceBase.XInclude</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_XmlExternalEntities">PrinceBase.XmlExternalEntities</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_NoNetwork">PrinceBase.NoNetwork</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_NoRedirects">PrinceBase.NoRedirects</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_AuthUser">PrinceBase.AuthUser</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_AuthPassword">PrinceBase.AuthPassword</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_AuthServer">PrinceBase.AuthServer</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_AuthScheme">PrinceBase.AuthScheme</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_AuthMethods">PrinceBase.AuthMethods</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_NoAuthPreemptive">PrinceBase.NoAuthPreemptive</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_HttpProxy">PrinceBase.HttpProxy</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_HttpTimeout">PrinceBase.HttpTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_Cookies">PrinceBase.Cookies</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_CookieJar">PrinceBase.CookieJar</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_SslCaCert">PrinceBase.SslCaCert</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_SslCaPath">PrinceBase.SslCaPath</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_SslCert">PrinceBase.SslCert</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_SslCertType">PrinceBase.SslCertType</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_SslKey">PrinceBase.SslKey</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_SslKeyType">PrinceBase.SslKeyType</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_SslKeyPassword">PrinceBase.SslKeyPassword</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_SslVersion">PrinceBase.SslVersion</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_Insecure">PrinceBase.Insecure</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_NoParallelDownloads">PrinceBase.NoParallelDownloads</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_JavaScript">PrinceBase.JavaScript</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_Scripts">PrinceBase.Scripts</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_MaxPasses">PrinceBase.MaxPasses</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_StyleSheets">PrinceBase.StyleSheets</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_Media">PrinceBase.Media</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_NoAuthorStyle">PrinceBase.NoAuthorStyle</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_NoDefaultStyle">PrinceBase.NoDefaultStyle</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_PdfId">PrinceBase.PdfId</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_PdfLang">PrinceBase.PdfLang</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_PdfProfile">PrinceBase.PdfProfile</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_PdfOutputIntent">PrinceBase.PdfOutputIntent</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_PdfScript">PrinceBase.PdfScript</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_PdfEventScripts">PrinceBase.PdfEventScripts</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_FileAttachments">PrinceBase.FileAttachments</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_NoArtificialFonts">PrinceBase.NoArtificialFonts</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_NoEmbedFonts">PrinceBase.NoEmbedFonts</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_NoSubsetFonts">PrinceBase.NoSubsetFonts</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_ForceIdentityEncoding">PrinceBase.ForceIdentityEncoding</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_NoCompress">PrinceBase.NoCompress</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_NoObjectStreams">PrinceBase.NoObjectStreams</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_ConvertColors">PrinceBase.ConvertColors</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_FallbackCmykProfile">PrinceBase.FallbackCmykProfile</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_TaggedPdf">PrinceBase.TaggedPdf</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_PdfForms">PrinceBase.PdfForms</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_PdfTitle">PrinceBase.PdfTitle</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_PdfSubject">PrinceBase.PdfSubject</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_PdfAuthor">PrinceBase.PdfAuthor</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_PdfKeywords">PrinceBase.PdfKeywords</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_PdfCreator">PrinceBase.PdfCreator</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_Xmp">PrinceBase.Xmp</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_Encrypt">PrinceBase.Encrypt</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_KeyBits">PrinceBase.KeyBits</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_UserPassword">PrinceBase.UserPassword</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_OwnerPassword">PrinceBase.OwnerPassword</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_DisallowPrint">PrinceBase.DisallowPrint</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_DisallowCopy">PrinceBase.DisallowCopy</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_AllowCopyForAccessibility">PrinceBase.AllowCopyForAccessibility</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_DisallowAnnotate">PrinceBase.DisallowAnnotate</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_DisallowModify">PrinceBase.DisallowModify</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_AllowAssembly">PrinceBase.AllowAssembly</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_LicenseFile">PrinceBase.LicenseFile</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_LicenseKey">PrinceBase.LicenseKey</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_FailDroppedContent">PrinceBase.FailDroppedContent</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_FailMissingResources">PrinceBase.FailMissingResources</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_FailStrippedTransparency">PrinceBase.FailStrippedTransparency</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_FailMissingGlyphs">PrinceBase.FailMissingGlyphs</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_FailPdfProfileError">PrinceBase.FailPdfProfileError</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_FailPdfTagError">PrinceBase.FailPdfTagError</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_FailInvalidLicense">PrinceBase.FailInvalidLicense</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_AddFileAttachment_System_String_">PrinceBase.AddFileAttachment(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_FailSafe_System_Boolean_">PrinceBase.FailSafe(Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_StartPrince_System_Collections_Generic_List_System_String__">PrinceBase.StartPrince(List&lt;String&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_GetBaseCommandLine">PrinceBase.GetBaseCommandLine()</a>
+    </div>
+    <div>
+      <a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_ReadMessages_System_IO_StreamReader_">PrinceBase.ReadMessages(StreamReader)</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="PrinceXML.Wrapper.html">PrinceXML.Wrapper</a></h6>
+  <h6><strong>Assembly</strong>: PrinceXML.Wrapper.dll</h6>
+  <h5 id="PrinceXML_Wrapper_PrinceControl_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class PrinceControl : PrinceBase</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/yeslogic/prince-csharp-wrapper/new/f8be6c06c9ec7faf33b5bd898e721695fb9c53d8/apiSpec/new?filename=PrinceXML_Wrapper_PrinceControl__ctor_System_String_PrinceXML_Wrapper_Events_PrinceEvents_.md&amp;value=---%0Auid%3A%20PrinceXML.Wrapper.PrinceControl.%23ctor(System.String%2CPrinceXML.Wrapper.Events.PrinceEvents)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/yeslogic/prince-csharp-wrapper/blob/f8be6c06c9ec7faf33b5bd898e721695fb9c53d8/PrinceXML.Wrapper/PrinceControl.cs/#L41">View Source</a>
+  </span>
+  <a id="PrinceXML_Wrapper_PrinceControl__ctor_" data-uid="PrinceXML.Wrapper.PrinceControl.#ctor*"></a>
+  <h4 id="PrinceXML_Wrapper_PrinceControl__ctor_System_String_PrinceXML_Wrapper_Events_PrinceEvents_" data-uid="PrinceXML.Wrapper.PrinceControl.#ctor(System.String,PrinceXML.Wrapper.Events.PrinceEvents)">PrinceControl(String, PrinceEvents)</h4>
+  <div class="markdown level1 summary"><p>Constructor for <code>PrinceControl</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PrinceControl(string princePath, PrinceEvents events = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">princePath</span></td>
+        <td><p>The path of the Prince executable. For example, this may be
+<code>C:\Program Files\Prince\engine\bin\prince.exe</code> on Windows.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="PrinceXML.Wrapper.Events.PrinceEvents.html">PrinceEvents</a></td>
+        <td><span class="parametername">events</span></td>
+        <td><p>An implementation of <code>PrinceEvents</code> that will receive messages
+returned from Prince.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/yeslogic/prince-csharp-wrapper/new/f8be6c06c9ec7faf33b5bd898e721695fb9c53d8/apiSpec/new?filename=PrinceXML_Wrapper_PrinceControl_Version.md&amp;value=---%0Auid%3A%20PrinceXML.Wrapper.PrinceControl.Version%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/yeslogic/prince-csharp-wrapper/blob/f8be6c06c9ec7faf33b5bd898e721695fb9c53d8/PrinceXML.Wrapper/PrinceControl.cs/#L24">View Source</a>
+  </span>
+  <a id="PrinceXML_Wrapper_PrinceControl_Version_" data-uid="PrinceXML.Wrapper.PrinceControl.Version*"></a>
+  <h4 id="PrinceXML_Wrapper_PrinceControl_Version" data-uid="PrinceXML.Wrapper.PrinceControl.Version">Version</h4>
+  <div class="markdown level1 summary"><p>Get the version string for the running Prince process.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Version { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The version string.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/yeslogic/prince-csharp-wrapper/new/f8be6c06c9ec7faf33b5bd898e721695fb9c53d8/apiSpec/new?filename=PrinceXML_Wrapper_PrinceControl_AddFileAttachment_System_Byte___System_String_System_String_.md&amp;value=---%0Auid%3A%20PrinceXML.Wrapper.PrinceControl.AddFileAttachment(System.Byte%5B%5D%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/yeslogic/prince-csharp-wrapper/blob/f8be6c06c9ec7faf33b5bd898e721695fb9c53d8/PrinceXML.Wrapper/PrinceControl.cs/#L332">View Source</a>
+  </span>
+  <a id="PrinceXML_Wrapper_PrinceControl_AddFileAttachment_" data-uid="PrinceXML.Wrapper.PrinceControl.AddFileAttachment*"></a>
+  <h4 id="PrinceXML_Wrapper_PrinceControl_AddFileAttachment_System_Byte___System_String_System_String_" data-uid="PrinceXML.Wrapper.PrinceControl.AddFileAttachment(System.Byte[],System.String,System.String)">AddFileAttachment(Byte[], String, String)</h4>
+  <div class="markdown level1 summary"><p>Add a file attachment that will be attached to the PDF file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddFileAttachment(byte[] attachment, string fileName, string description)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Byte</span>[]</td>
+        <td><span class="parametername">attachment</span></td>
+        <td><p>The file attachment as a byte array.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">fileName</span></td>
+        <td><p>The filename of the file attachment.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">description</span></td>
+        <td><p>The description of the file attachment.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/yeslogic/prince-csharp-wrapper/new/f8be6c06c9ec7faf33b5bd898e721695fb9c53d8/apiSpec/new?filename=PrinceXML_Wrapper_PrinceControl_AddPdfEventScript_PrinceXML_Wrapper_Enums_PdfEvent_System_Byte___.md&amp;value=---%0Auid%3A%20PrinceXML.Wrapper.PrinceControl.AddPdfEventScript(PrinceXML.Wrapper.Enums.PdfEvent%2CSystem.Byte%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/yeslogic/prince-csharp-wrapper/blob/f8be6c06c9ec7faf33b5bd898e721695fb9c53d8/PrinceXML.Wrapper/PrinceControl.cs/#L320">View Source</a>
+  </span>
+  <a id="PrinceXML_Wrapper_PrinceControl_AddPdfEventScript_" data-uid="PrinceXML.Wrapper.PrinceControl.AddPdfEventScript*"></a>
+  <h4 id="PrinceXML_Wrapper_PrinceControl_AddPdfEventScript_PrinceXML_Wrapper_Enums_PdfEvent_System_Byte___" data-uid="PrinceXML.Wrapper.PrinceControl.AddPdfEventScript(PrinceXML.Wrapper.Enums.PdfEvent,System.Byte[])">AddPdfEventScript(PdfEvent, Byte[])</h4>
+  <div class="markdown level1 summary"><p>Include an AcrosJS script to run on a specific event.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddPdfEventScript(PdfEvent pdfEvent, byte[] pdfScript)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PrinceXML.Wrapper.Enums.PdfEvent.html">PdfEvent</a></td>
+        <td><span class="parametername">pdfEvent</span></td>
+        <td><p>The PDF event.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Byte</span>[]</td>
+        <td><span class="parametername">pdfScript</span></td>
+        <td><p>The AcroJS script as a byte array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/yeslogic/prince-csharp-wrapper/new/f8be6c06c9ec7faf33b5bd898e721695fb9c53d8/apiSpec/new?filename=PrinceXML_Wrapper_PrinceControl_AddScript_System_Byte___.md&amp;value=---%0Auid%3A%20PrinceXML.Wrapper.PrinceControl.AddScript(System.Byte%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/yeslogic/prince-csharp-wrapper/blob/f8be6c06c9ec7faf33b5bd898e721695fb9c53d8/PrinceXML.Wrapper/PrinceControl.cs/#L289">View Source</a>
+  </span>
+  <a id="PrinceXML_Wrapper_PrinceControl_AddScript_" data-uid="PrinceXML.Wrapper.PrinceControl.AddScript*"></a>
+  <h4 id="PrinceXML_Wrapper_PrinceControl_AddScript_System_Byte___" data-uid="PrinceXML.Wrapper.PrinceControl.AddScript(System.Byte[])">AddScript(Byte[])</h4>
+  <div class="markdown level1 summary"><p>Add a JavaScript script that will run before conversion.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddScript(byte[] script)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Byte</span>[]</td>
+        <td><span class="parametername">script</span></td>
+        <td><p>The script as a byte array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/yeslogic/prince-csharp-wrapper/new/f8be6c06c9ec7faf33b5bd898e721695fb9c53d8/apiSpec/new?filename=PrinceXML_Wrapper_PrinceControl_AddStyleSheet_System_Byte___.md&amp;value=---%0Auid%3A%20PrinceXML.Wrapper.PrinceControl.AddStyleSheet(System.Byte%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/yeslogic/prince-csharp-wrapper/blob/f8be6c06c9ec7faf33b5bd898e721695fb9c53d8/PrinceXML.Wrapper/PrinceControl.cs/#L299">View Source</a>
+  </span>
+  <a id="PrinceXML_Wrapper_PrinceControl_AddStyleSheet_" data-uid="PrinceXML.Wrapper.PrinceControl.AddStyleSheet*"></a>
+  <h4 id="PrinceXML_Wrapper_PrinceControl_AddStyleSheet_System_Byte___" data-uid="PrinceXML.Wrapper.PrinceControl.AddStyleSheet(System.Byte[])">AddStyleSheet(Byte[])</h4>
+  <div class="markdown level1 summary"><p>Add a CSS style sheet that will be applied to each input document.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddStyleSheet(byte[] styleSheet)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Byte</span>[]</td>
+        <td><span class="parametername">styleSheet</span></td>
+        <td><p>The CSS style sheet as a byte array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/yeslogic/prince-csharp-wrapper/new/f8be6c06c9ec7faf33b5bd898e721695fb9c53d8/apiSpec/new?filename=PrinceXML_Wrapper_PrinceControl_Convert_System_Collections_Generic_List_System_String__System_IO_Stream_.md&amp;value=---%0Auid%3A%20PrinceXML.Wrapper.PrinceControl.Convert(System.Collections.Generic.List%7BSystem.String%7D%2CSystem.IO.Stream)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/yeslogic/prince-csharp-wrapper/blob/f8be6c06c9ec7faf33b5bd898e721695fb9c53d8/PrinceXML.Wrapper/PrinceControl.cs/#L52">View Source</a>
+  </span>
+  <a id="PrinceXML_Wrapper_PrinceControl_Convert_" data-uid="PrinceXML.Wrapper.PrinceControl.Convert*"></a>
+  <h4 id="PrinceXML_Wrapper_PrinceControl_Convert_System_Collections_Generic_List_System_String__System_IO_Stream_" data-uid="PrinceXML.Wrapper.PrinceControl.Convert(System.Collections.Generic.List{System.String},System.IO.Stream)">Convert(List&lt;String&gt;, Stream)</h4>
+  <div class="markdown level1 summary"><p>Convert multiple XML or HTML files to a PDF file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Convert(List&lt;string&gt; inputPaths, Stream output)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">inputPaths</span></td>
+        <td><p>The filenames of the input XML or HTML documents.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.Stream</span></td>
+        <td><span class="parametername">output</span></td>
+        <td><p>The output Stream to which Prince will write the PDF output.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>true if a PDF file was generated successfully.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_Convert_System_Collections_Generic_List_System_String__System_IO_Stream_">PrinceBase.Convert(List&lt;String&gt;, Stream)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/yeslogic/prince-csharp-wrapper/new/f8be6c06c9ec7faf33b5bd898e721695fb9c53d8/apiSpec/new?filename=PrinceXML_Wrapper_PrinceControl_Convert_System_IO_Stream_System_IO_Stream_.md&amp;value=---%0Auid%3A%20PrinceXML.Wrapper.PrinceControl.Convert(System.IO.Stream%2CSystem.IO.Stream)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/yeslogic/prince-csharp-wrapper/blob/f8be6c06c9ec7faf33b5bd898e721695fb9c53d8/PrinceXML.Wrapper/PrinceControl.cs/#L59">View Source</a>
+  </span>
+  <a id="PrinceXML_Wrapper_PrinceControl_Convert_" data-uid="PrinceXML.Wrapper.PrinceControl.Convert*"></a>
+  <h4 id="PrinceXML_Wrapper_PrinceControl_Convert_System_IO_Stream_System_IO_Stream_" data-uid="PrinceXML.Wrapper.PrinceControl.Convert(System.IO.Stream,System.IO.Stream)">Convert(Stream, Stream)</h4>
+  <div class="markdown level1 summary"><p>Convert an XML or HTML stream to a PDF file. Note that it may be helpful to
+specify a base URL or path from the input document using <code>BaseUrl</code>.
+This allows relative URLs and paths in the document (e.g. for images) to be
+resolved correctly.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Convert(Stream input, Stream output)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.Stream</span></td>
+        <td><span class="parametername">input</span></td>
+        <td><p>The input Stream from which Prince will read the XML or HTML document.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.Stream</span></td>
+        <td><span class="parametername">output</span></td>
+        <td><p>The output Stream to which Prince will write the PDF output.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>true if a PDF file was generated successfully.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_Convert_System_IO_Stream_System_IO_Stream_">PrinceBase.Convert(Stream, Stream)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/yeslogic/prince-csharp-wrapper/new/f8be6c06c9ec7faf33b5bd898e721695fb9c53d8/apiSpec/new?filename=PrinceXML_Wrapper_PrinceControl_Convert_System_String_System_IO_Stream_.md&amp;value=---%0Auid%3A%20PrinceXML.Wrapper.PrinceControl.Convert(System.String%2CSystem.IO.Stream)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/yeslogic/prince-csharp-wrapper/blob/f8be6c06c9ec7faf33b5bd898e721695fb9c53d8/PrinceXML.Wrapper/PrinceControl.cs/#L45">View Source</a>
+  </span>
+  <a id="PrinceXML_Wrapper_PrinceControl_Convert_" data-uid="PrinceXML.Wrapper.PrinceControl.Convert*"></a>
+  <h4 id="PrinceXML_Wrapper_PrinceControl_Convert_System_String_System_IO_Stream_" data-uid="PrinceXML.Wrapper.PrinceControl.Convert(System.String,System.IO.Stream)">Convert(String, Stream)</h4>
+  <div class="markdown level1 summary"><p>Convert an XML or HTML file to a PDF file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Convert(string inputPath, Stream output)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">inputPath</span></td>
+        <td><p>The filename of the input XML or HTML document.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.Stream</span></td>
+        <td><span class="parametername">output</span></td>
+        <td><p>The output Stream to which Prince will write the PDF output.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>true if a PDF file was generated successfully.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_Convert_System_String_System_IO_Stream_">PrinceBase.Convert(String, Stream)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/yeslogic/prince-csharp-wrapper/new/f8be6c06c9ec7faf33b5bd898e721695fb9c53d8/apiSpec/new?filename=PrinceXML_Wrapper_PrinceControl_ConvertString_System_String_System_IO_Stream_.md&amp;value=---%0Auid%3A%20PrinceXML.Wrapper.PrinceControl.ConvertString(System.String%2CSystem.IO.Stream)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/yeslogic/prince-csharp-wrapper/blob/f8be6c06c9ec7faf33b5bd898e721695fb9c53d8/PrinceXML.Wrapper/PrinceControl.cs/#L76">View Source</a>
+  </span>
+  <a id="PrinceXML_Wrapper_PrinceControl_ConvertString_" data-uid="PrinceXML.Wrapper.PrinceControl.ConvertString*"></a>
+  <h4 id="PrinceXML_Wrapper_PrinceControl_ConvertString_System_String_System_IO_Stream_" data-uid="PrinceXML.Wrapper.PrinceControl.ConvertString(System.String,System.IO.Stream)">ConvertString(String, Stream)</h4>
+  <div class="markdown level1 summary"><p>Convert an XML or HTML string to a PDF file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool ConvertString(string input, Stream output)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">input</span></td>
+        <td><p>The XML or HTML document in the form of a string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.Stream</span></td>
+        <td><span class="parametername">output</span></td>
+        <td><p>The output Stream to which Prince will write the PDF output.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>true if a PDF file was generated successfully.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_ConvertString_System_String_System_IO_Stream_">PrinceBase.ConvertString(String, Stream)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/yeslogic/prince-csharp-wrapper/new/f8be6c06c9ec7faf33b5bd898e721695fb9c53d8/apiSpec/new?filename=PrinceXML_Wrapper_PrinceControl_SetPdfScript_System_Byte___.md&amp;value=---%0Auid%3A%20PrinceXML.Wrapper.PrinceControl.SetPdfScript(System.Byte%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/yeslogic/prince-csharp-wrapper/blob/f8be6c06c9ec7faf33b5bd898e721695fb9c53d8/PrinceXML.Wrapper/PrinceControl.cs/#L309">View Source</a>
+  </span>
+  <a id="PrinceXML_Wrapper_PrinceControl_SetPdfScript_" data-uid="PrinceXML.Wrapper.PrinceControl.SetPdfScript*"></a>
+  <h4 id="PrinceXML_Wrapper_PrinceControl_SetPdfScript_System_Byte___" data-uid="PrinceXML.Wrapper.PrinceControl.SetPdfScript(System.Byte[])">SetPdfScript(Byte[])</h4>
+  <div class="markdown level1 summary"><p>Include an AcroJS script to run when the PDF is opened.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetPdfScript(byte[] pdfScript)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Byte</span>[]</td>
+        <td><span class="parametername">pdfScript</span></td>
+        <td><p>The AcroJS script as a byte array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/yeslogic/prince-csharp-wrapper/new/f8be6c06c9ec7faf33b5bd898e721695fb9c53d8/apiSpec/new?filename=PrinceXML_Wrapper_PrinceControl_Start.md&amp;value=---%0Auid%3A%20PrinceXML.Wrapper.PrinceControl.Start%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/yeslogic/prince-csharp-wrapper/blob/f8be6c06c9ec7faf33b5bd898e721695fb9c53d8/PrinceXML.Wrapper/PrinceControl.cs/#L133">View Source</a>
+  </span>
+  <a id="PrinceXML_Wrapper_PrinceControl_Start_" data-uid="PrinceXML.Wrapper.PrinceControl.Start*"></a>
+  <h4 id="PrinceXML_Wrapper_PrinceControl_Start" data-uid="PrinceXML.Wrapper.PrinceControl.Start">Start()</h4>
+  <div class="markdown level1 summary"><p>Start a Prince control process that can be used for multiple consecutive
+document conversions.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Start()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/yeslogic/prince-csharp-wrapper/new/f8be6c06c9ec7faf33b5bd898e721695fb9c53d8/apiSpec/new?filename=PrinceXML_Wrapper_PrinceControl_Stop.md&amp;value=---%0Auid%3A%20PrinceXML.Wrapper.PrinceControl.Stop%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/yeslogic/prince-csharp-wrapper/blob/f8be6c06c9ec7faf33b5bd898e721695fb9c53d8/PrinceXML.Wrapper/PrinceControl.cs/#L165">View Source</a>
+  </span>
+  <a id="PrinceXML_Wrapper_PrinceControl_Stop_" data-uid="PrinceXML.Wrapper.PrinceControl.Stop*"></a>
+  <h4 id="PrinceXML_Wrapper_PrinceControl_Stop" data-uid="PrinceXML.Wrapper.PrinceControl.Stop">Stop()</h4>
+  <div class="markdown level1 summary"><p>Stop the Prince control process.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Stop()</code></pre>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/yeslogic/prince-csharp-wrapper/new/f8be6c06c9ec7faf33b5bd898e721695fb9c53d8/apiSpec/new?filename=PrinceXML_Wrapper_PrinceControl.md&amp;value=---%0Auid%3A%20PrinceXML.Wrapper.PrinceControl%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/yeslogic/prince-csharp-wrapper/blob/f8be6c06c9ec7faf33b5bd898e721695fb9c53d8/PrinceXML.Wrapper/PrinceControl.cs/#L18" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
