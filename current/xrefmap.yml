@@ -142,6 +142,55 @@ references:
   commentId: F:PrinceXML.Wrapper.Enums.KeyBits.Bits40
   fullName: PrinceXML.Wrapper.Enums.KeyBits.Bits40
   nameWithType: KeyBits.Bits40
+- uid: PrinceXML.Wrapper.Enums.PdfEvent
+  name: PdfEvent
+  href: api/PrinceXML.Wrapper.Enums.PdfEvent.html
+  commentId: T:PrinceXML.Wrapper.Enums.PdfEvent
+  fullName: PrinceXML.Wrapper.Enums.PdfEvent
+  nameWithType: PdfEvent
+- uid: PrinceXML.Wrapper.Enums.PdfEvent.DidPrint
+  name: DidPrint
+  href: api/PrinceXML.Wrapper.Enums.PdfEvent.html#PrinceXML_Wrapper_Enums_PdfEvent_DidPrint
+  commentId: F:PrinceXML.Wrapper.Enums.PdfEvent.DidPrint
+  fullName: PrinceXML.Wrapper.Enums.PdfEvent.DidPrint
+  nameWithType: PdfEvent.DidPrint
+- uid: PrinceXML.Wrapper.Enums.PdfEvent.DidSave
+  name: DidSave
+  href: api/PrinceXML.Wrapper.Enums.PdfEvent.html#PrinceXML_Wrapper_Enums_PdfEvent_DidSave
+  commentId: F:PrinceXML.Wrapper.Enums.PdfEvent.DidSave
+  fullName: PrinceXML.Wrapper.Enums.PdfEvent.DidSave
+  nameWithType: PdfEvent.DidSave
+- uid: PrinceXML.Wrapper.Enums.PdfEvent.ToString
+  name: ToString()
+  href: api/PrinceXML.Wrapper.Enums.PdfEvent.html#PrinceXML_Wrapper_Enums_PdfEvent_ToString
+  commentId: M:PrinceXML.Wrapper.Enums.PdfEvent.ToString
+  fullName: PrinceXML.Wrapper.Enums.PdfEvent.ToString()
+  nameWithType: PdfEvent.ToString()
+- uid: PrinceXML.Wrapper.Enums.PdfEvent.ToString*
+  name: ToString
+  href: api/PrinceXML.Wrapper.Enums.PdfEvent.html#PrinceXML_Wrapper_Enums_PdfEvent_ToString_
+  commentId: Overload:PrinceXML.Wrapper.Enums.PdfEvent.ToString
+  isSpec: "True"
+  fullName: PrinceXML.Wrapper.Enums.PdfEvent.ToString
+  nameWithType: PdfEvent.ToString
+- uid: PrinceXML.Wrapper.Enums.PdfEvent.WillClose
+  name: WillClose
+  href: api/PrinceXML.Wrapper.Enums.PdfEvent.html#PrinceXML_Wrapper_Enums_PdfEvent_WillClose
+  commentId: F:PrinceXML.Wrapper.Enums.PdfEvent.WillClose
+  fullName: PrinceXML.Wrapper.Enums.PdfEvent.WillClose
+  nameWithType: PdfEvent.WillClose
+- uid: PrinceXML.Wrapper.Enums.PdfEvent.WillPrint
+  name: WillPrint
+  href: api/PrinceXML.Wrapper.Enums.PdfEvent.html#PrinceXML_Wrapper_Enums_PdfEvent_WillPrint
+  commentId: F:PrinceXML.Wrapper.Enums.PdfEvent.WillPrint
+  fullName: PrinceXML.Wrapper.Enums.PdfEvent.WillPrint
+  nameWithType: PdfEvent.WillPrint
+- uid: PrinceXML.Wrapper.Enums.PdfEvent.WillSave
+  name: WillSave
+  href: api/PrinceXML.Wrapper.Enums.PdfEvent.html#PrinceXML_Wrapper_Enums_PdfEvent_WillSave
+  commentId: F:PrinceXML.Wrapper.Enums.PdfEvent.WillSave
+  fullName: PrinceXML.Wrapper.Enums.PdfEvent.WillSave
+  nameWithType: PdfEvent.WillSave
 - uid: PrinceXML.Wrapper.Enums.PdfProfile
   name: PdfProfile
   href: api/PrinceXML.Wrapper.Enums.PdfProfile.html
@@ -1143,6 +1192,110 @@ references:
   isSpec: "True"
   fullName: PrinceXML.Wrapper.PrinceBase.Encrypt
   nameWithType: PrinceBase.Encrypt
+- uid: PrinceXML.Wrapper.PrinceBase.FailDroppedContent
+  name: FailDroppedContent
+  href: api/PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_FailDroppedContent
+  commentId: P:PrinceXML.Wrapper.PrinceBase.FailDroppedContent
+  fullName: PrinceXML.Wrapper.PrinceBase.FailDroppedContent
+  nameWithType: PrinceBase.FailDroppedContent
+- uid: PrinceXML.Wrapper.PrinceBase.FailDroppedContent*
+  name: FailDroppedContent
+  href: api/PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_FailDroppedContent_
+  commentId: Overload:PrinceXML.Wrapper.PrinceBase.FailDroppedContent
+  isSpec: "True"
+  fullName: PrinceXML.Wrapper.PrinceBase.FailDroppedContent
+  nameWithType: PrinceBase.FailDroppedContent
+- uid: PrinceXML.Wrapper.PrinceBase.FailInvalidLicense
+  name: FailInvalidLicense
+  href: api/PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_FailInvalidLicense
+  commentId: P:PrinceXML.Wrapper.PrinceBase.FailInvalidLicense
+  fullName: PrinceXML.Wrapper.PrinceBase.FailInvalidLicense
+  nameWithType: PrinceBase.FailInvalidLicense
+- uid: PrinceXML.Wrapper.PrinceBase.FailInvalidLicense*
+  name: FailInvalidLicense
+  href: api/PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_FailInvalidLicense_
+  commentId: Overload:PrinceXML.Wrapper.PrinceBase.FailInvalidLicense
+  isSpec: "True"
+  fullName: PrinceXML.Wrapper.PrinceBase.FailInvalidLicense
+  nameWithType: PrinceBase.FailInvalidLicense
+- uid: PrinceXML.Wrapper.PrinceBase.FailMissingGlyphs
+  name: FailMissingGlyphs
+  href: api/PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_FailMissingGlyphs
+  commentId: P:PrinceXML.Wrapper.PrinceBase.FailMissingGlyphs
+  fullName: PrinceXML.Wrapper.PrinceBase.FailMissingGlyphs
+  nameWithType: PrinceBase.FailMissingGlyphs
+- uid: PrinceXML.Wrapper.PrinceBase.FailMissingGlyphs*
+  name: FailMissingGlyphs
+  href: api/PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_FailMissingGlyphs_
+  commentId: Overload:PrinceXML.Wrapper.PrinceBase.FailMissingGlyphs
+  isSpec: "True"
+  fullName: PrinceXML.Wrapper.PrinceBase.FailMissingGlyphs
+  nameWithType: PrinceBase.FailMissingGlyphs
+- uid: PrinceXML.Wrapper.PrinceBase.FailMissingResources
+  name: FailMissingResources
+  href: api/PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_FailMissingResources
+  commentId: P:PrinceXML.Wrapper.PrinceBase.FailMissingResources
+  fullName: PrinceXML.Wrapper.PrinceBase.FailMissingResources
+  nameWithType: PrinceBase.FailMissingResources
+- uid: PrinceXML.Wrapper.PrinceBase.FailMissingResources*
+  name: FailMissingResources
+  href: api/PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_FailMissingResources_
+  commentId: Overload:PrinceXML.Wrapper.PrinceBase.FailMissingResources
+  isSpec: "True"
+  fullName: PrinceXML.Wrapper.PrinceBase.FailMissingResources
+  nameWithType: PrinceBase.FailMissingResources
+- uid: PrinceXML.Wrapper.PrinceBase.FailPdfProfileError
+  name: FailPdfProfileError
+  href: api/PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_FailPdfProfileError
+  commentId: P:PrinceXML.Wrapper.PrinceBase.FailPdfProfileError
+  fullName: PrinceXML.Wrapper.PrinceBase.FailPdfProfileError
+  nameWithType: PrinceBase.FailPdfProfileError
+- uid: PrinceXML.Wrapper.PrinceBase.FailPdfProfileError*
+  name: FailPdfProfileError
+  href: api/PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_FailPdfProfileError_
+  commentId: Overload:PrinceXML.Wrapper.PrinceBase.FailPdfProfileError
+  isSpec: "True"
+  fullName: PrinceXML.Wrapper.PrinceBase.FailPdfProfileError
+  nameWithType: PrinceBase.FailPdfProfileError
+- uid: PrinceXML.Wrapper.PrinceBase.FailPdfTagError
+  name: FailPdfTagError
+  href: api/PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_FailPdfTagError
+  commentId: P:PrinceXML.Wrapper.PrinceBase.FailPdfTagError
+  fullName: PrinceXML.Wrapper.PrinceBase.FailPdfTagError
+  nameWithType: PrinceBase.FailPdfTagError
+- uid: PrinceXML.Wrapper.PrinceBase.FailPdfTagError*
+  name: FailPdfTagError
+  href: api/PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_FailPdfTagError_
+  commentId: Overload:PrinceXML.Wrapper.PrinceBase.FailPdfTagError
+  isSpec: "True"
+  fullName: PrinceXML.Wrapper.PrinceBase.FailPdfTagError
+  nameWithType: PrinceBase.FailPdfTagError
+- uid: PrinceXML.Wrapper.PrinceBase.FailSafe(System.Boolean)
+  name: FailSafe(Boolean)
+  href: api/PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_FailSafe_System_Boolean_
+  commentId: M:PrinceXML.Wrapper.PrinceBase.FailSafe(System.Boolean)
+  fullName: PrinceXML.Wrapper.PrinceBase.FailSafe(System.Boolean)
+  nameWithType: PrinceBase.FailSafe(Boolean)
+- uid: PrinceXML.Wrapper.PrinceBase.FailSafe*
+  name: FailSafe
+  href: api/PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_FailSafe_
+  commentId: Overload:PrinceXML.Wrapper.PrinceBase.FailSafe
+  isSpec: "True"
+  fullName: PrinceXML.Wrapper.PrinceBase.FailSafe
+  nameWithType: PrinceBase.FailSafe
+- uid: PrinceXML.Wrapper.PrinceBase.FailStrippedTransparency
+  name: FailStrippedTransparency
+  href: api/PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_FailStrippedTransparency
+  commentId: P:PrinceXML.Wrapper.PrinceBase.FailStrippedTransparency
+  fullName: PrinceXML.Wrapper.PrinceBase.FailStrippedTransparency
+  nameWithType: PrinceBase.FailStrippedTransparency
+- uid: PrinceXML.Wrapper.PrinceBase.FailStrippedTransparency*
+  name: FailStrippedTransparency
+  href: api/PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_FailStrippedTransparency_
+  commentId: Overload:PrinceXML.Wrapper.PrinceBase.FailStrippedTransparency
+  isSpec: "True"
+  fullName: PrinceXML.Wrapper.PrinceBase.FailStrippedTransparency
+  nameWithType: PrinceBase.FailStrippedTransparency
 - uid: PrinceXML.Wrapper.PrinceBase.FallbackCmykProfile
   name: FallbackCmykProfile
   href: api/PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_FallbackCmykProfile
@@ -1221,6 +1374,19 @@ references:
   isSpec: "True"
   fullName: PrinceXML.Wrapper.PrinceBase.HttpTimeout
   nameWithType: PrinceBase.HttpTimeout
+- uid: PrinceXML.Wrapper.PrinceBase.Iframes
+  name: Iframes
+  href: api/PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_Iframes
+  commentId: P:PrinceXML.Wrapper.PrinceBase.Iframes
+  fullName: PrinceXML.Wrapper.PrinceBase.Iframes
+  nameWithType: PrinceBase.Iframes
+- uid: PrinceXML.Wrapper.PrinceBase.Iframes*
+  name: Iframes
+  href: api/PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_Iframes_
+  commentId: Overload:PrinceXML.Wrapper.PrinceBase.Iframes
+  isSpec: "True"
+  fullName: PrinceXML.Wrapper.PrinceBase.Iframes
+  nameWithType: PrinceBase.Iframes
 - uid: PrinceXML.Wrapper.PrinceBase.InputType
   name: InputType
   href: api/PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_InputType
@@ -1546,6 +1712,19 @@ references:
   isSpec: "True"
   fullName: PrinceXML.Wrapper.PrinceBase.PdfCreator
   nameWithType: PrinceBase.PdfCreator
+- uid: PrinceXML.Wrapper.PrinceBase.PdfEventScripts
+  name: PdfEventScripts
+  href: api/PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_PdfEventScripts
+  commentId: P:PrinceXML.Wrapper.PrinceBase.PdfEventScripts
+  fullName: PrinceXML.Wrapper.PrinceBase.PdfEventScripts
+  nameWithType: PrinceBase.PdfEventScripts
+- uid: PrinceXML.Wrapper.PrinceBase.PdfEventScripts*
+  name: PdfEventScripts
+  href: api/PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_PdfEventScripts_
+  commentId: Overload:PrinceXML.Wrapper.PrinceBase.PdfEventScripts
+  isSpec: "True"
+  fullName: PrinceXML.Wrapper.PrinceBase.PdfEventScripts
+  nameWithType: PrinceBase.PdfEventScripts
 - uid: PrinceXML.Wrapper.PrinceBase.PdfForms
   name: PdfForms
   href: api/PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_PdfForms
@@ -1624,6 +1803,19 @@ references:
   isSpec: "True"
   fullName: PrinceXML.Wrapper.PrinceBase.PdfProfile
   nameWithType: PrinceBase.PdfProfile
+- uid: PrinceXML.Wrapper.PrinceBase.PdfScript
+  name: PdfScript
+  href: api/PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_PdfScript
+  commentId: P:PrinceXML.Wrapper.PrinceBase.PdfScript
+  fullName: PrinceXML.Wrapper.PrinceBase.PdfScript
+  nameWithType: PrinceBase.PdfScript
+- uid: PrinceXML.Wrapper.PrinceBase.PdfScript*
+  name: PdfScript
+  href: api/PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_PdfScript_
+  commentId: Overload:PrinceXML.Wrapper.PrinceBase.PdfScript
+  isSpec: "True"
+  fullName: PrinceXML.Wrapper.PrinceBase.PdfScript
+  nameWithType: PrinceBase.PdfScript
 - uid: PrinceXML.Wrapper.PrinceBase.PdfSubject
   name: PdfSubject
   href: api/PrinceXML.Wrapper.PrinceBase.html#PrinceXML_Wrapper_PrinceBase_PdfSubject
@@ -1922,6 +2114,22 @@ references:
   isSpec: "True"
   fullName: PrinceXML.Wrapper.PrinceControl.AddFileAttachment
   nameWithType: PrinceControl.AddFileAttachment
+- uid: PrinceXML.Wrapper.PrinceControl.AddPdfEventScript(PrinceXML.Wrapper.Enums.PdfEvent,System.Byte[])
+  name: AddPdfEventScript(PdfEvent, Byte[])
+  href: api/PrinceXML.Wrapper.PrinceControl.html#PrinceXML_Wrapper_PrinceControl_AddPdfEventScript_PrinceXML_Wrapper_Enums_PdfEvent_System_Byte___
+  commentId: M:PrinceXML.Wrapper.PrinceControl.AddPdfEventScript(PrinceXML.Wrapper.Enums.PdfEvent,System.Byte[])
+  name.vb: AddPdfEventScript(PdfEvent, Byte())
+  fullName: PrinceXML.Wrapper.PrinceControl.AddPdfEventScript(PrinceXML.Wrapper.Enums.PdfEvent, System.Byte[])
+  fullName.vb: PrinceXML.Wrapper.PrinceControl.AddPdfEventScript(PrinceXML.Wrapper.Enums.PdfEvent, System.Byte())
+  nameWithType: PrinceControl.AddPdfEventScript(PdfEvent, Byte[])
+  nameWithType.vb: PrinceControl.AddPdfEventScript(PdfEvent, Byte())
+- uid: PrinceXML.Wrapper.PrinceControl.AddPdfEventScript*
+  name: AddPdfEventScript
+  href: api/PrinceXML.Wrapper.PrinceControl.html#PrinceXML_Wrapper_PrinceControl_AddPdfEventScript_
+  commentId: Overload:PrinceXML.Wrapper.PrinceControl.AddPdfEventScript
+  isSpec: "True"
+  fullName: PrinceXML.Wrapper.PrinceControl.AddPdfEventScript
+  nameWithType: PrinceControl.AddPdfEventScript
 - uid: PrinceXML.Wrapper.PrinceControl.AddScript(System.Byte[])
   name: AddScript(Byte[])
   href: api/PrinceXML.Wrapper.PrinceControl.html#PrinceXML_Wrapper_PrinceControl_AddScript_System_Byte___
@@ -1995,6 +2203,22 @@ references:
   isSpec: "True"
   fullName: PrinceXML.Wrapper.PrinceControl.ConvertString
   nameWithType: PrinceControl.ConvertString
+- uid: PrinceXML.Wrapper.PrinceControl.SetPdfScript(System.Byte[])
+  name: SetPdfScript(Byte[])
+  href: api/PrinceXML.Wrapper.PrinceControl.html#PrinceXML_Wrapper_PrinceControl_SetPdfScript_System_Byte___
+  commentId: M:PrinceXML.Wrapper.PrinceControl.SetPdfScript(System.Byte[])
+  name.vb: SetPdfScript(Byte())
+  fullName: PrinceXML.Wrapper.PrinceControl.SetPdfScript(System.Byte[])
+  fullName.vb: PrinceXML.Wrapper.PrinceControl.SetPdfScript(System.Byte())
+  nameWithType: PrinceControl.SetPdfScript(Byte[])
+  nameWithType.vb: PrinceControl.SetPdfScript(Byte())
+- uid: PrinceXML.Wrapper.PrinceControl.SetPdfScript*
+  name: SetPdfScript
+  href: api/PrinceXML.Wrapper.PrinceControl.html#PrinceXML_Wrapper_PrinceControl_SetPdfScript_
+  commentId: Overload:PrinceXML.Wrapper.PrinceControl.SetPdfScript
+  isSpec: "True"
+  fullName: PrinceXML.Wrapper.PrinceControl.SetPdfScript
+  nameWithType: PrinceControl.SetPdfScript
 - uid: PrinceXML.Wrapper.PrinceControl.Start
   name: Start()
   href: api/PrinceXML.Wrapper.PrinceControl.html#PrinceXML_Wrapper_PrinceControl_Start
