@@ -1,8 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <!-- https://docs.microsoft.com/en-us/dotnet/standard/net-standard#when-to-target-net50-vs-netstandard -->
-    <TargetFrameworks>net5.0; netstandard2.0</TargetFrameworks>
+    <!-- https://docs.microsoft.com/en-us/dotnet/standard/net-standard -->
+    <TargetFrameworks>net5.0; net6.0; net7.0; net8.0; netstandard2.0</TargetFrameworks>
     <RootNamespace>PrinceXML.Wrapper</RootNamespace>
 
     <PackageId>PrinceXMLWrapper</PackageId>
@@ -15,7 +15,7 @@
     <Version>1.2.0</Version>
     <Company>YesLogic Pty. Ltd.</Company>
     <Authors>YesLogic Pty. Ltd.</Authors>
-    <Copyright>Copyright (C) 2021-2023 YesLogic Pty. Ltd.</Copyright>
+    <Copyright>Copyright (C) 2021-2024 YesLogic Pty. Ltd.</Copyright>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageReadmeFile>README.md</PackageReadmeFile>
 
