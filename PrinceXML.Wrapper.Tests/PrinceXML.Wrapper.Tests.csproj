@@ -6,7 +6,7 @@
     the standard). However, neither appear to be installed on the GitHub Actions
     runners, nor am I able to get either working on my (Linux) development
     machine. -->
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFrameworks>net5.0; net6.0; net7.0; net8.0</TargetFrameworks>
     <Nullable>enable</Nullable>
 
     <IsPackable>false</IsPackable>
