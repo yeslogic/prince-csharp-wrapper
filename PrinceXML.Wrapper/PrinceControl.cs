@@ -217,17 +217,20 @@ namespace PrinceXML.Wrapper
             json.Field("compress", !NoCompress);
             json.Field("object-streams", !NoObjectStreams);
 
-            json.BeginObj("encrypt");
-            if (KeyBits != null) { json.Field("key-bits", (int) KeyBits); }
-            if (UserPassword != null) { json.Field("user-password", UserPassword); }
-            if (OwnerPassword != null) { json.Field("owner-password", OwnerPassword); }
-            json.Field("disallow-print", DisallowPrint);
-            json.Field("disallow-modify", DisallowModify);
-            json.Field("disallow-copy", DisallowCopy);
-            json.Field("disallow-annotate", DisallowAnnotate);
-            json.Field("allow-copy-for-accessibility", AllowCopyForAccessibility);
-            json.Field("allow-assembly", AllowAssembly);
-            json.EndObj();
+            if (Encrypt)
+            {
+                json.BeginObj("encrypt");
+                if (KeyBits != null) { json.Field("key-bits", (int) KeyBits); }
+                if (UserPassword != null) { json.Field("user-password", UserPassword); }
+                if (OwnerPassword != null) { json.Field("owner-password", OwnerPassword); }
+                json.Field("disallow-print", DisallowPrint);
+                json.Field("disallow-modify", DisallowModify);
+                json.Field("disallow-copy", DisallowCopy);
+                json.Field("disallow-annotate", DisallowAnnotate);
+                json.Field("allow-copy-for-accessibility", AllowCopyForAccessibility);
+                json.Field("allow-assembly", AllowAssembly);
+                json.EndObj();
+            }
 
             if (PdfProfile != null) { json.Field("pdf-profile", PdfProfile.ToString()); }
             if (PdfOutputIntent != null) { json.Field("pdf-output-intent", PdfOutputIntent); }

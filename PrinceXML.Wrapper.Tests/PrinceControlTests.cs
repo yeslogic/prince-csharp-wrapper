@@ -126,6 +126,7 @@ namespace PrinceXML.Wrapper.Tests
             P.NoCompress = true;
             P.NoObjectStreams = true;
 
+            P.Encrypt = true;
             P.KeyBits = KeyBits.Bits40;
             P.UserPassword = "x";
             P.OwnerPassword = "x";
