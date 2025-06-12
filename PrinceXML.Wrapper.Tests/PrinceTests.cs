@@ -103,6 +103,41 @@ namespace PrinceXML.Wrapper.Tests
         }
 
         [Fact]
+        public void ConvertInputList1()
+        {
+            string inputListPath = Path.GetTempFileName();
+            using (FileStream fis = new FileStream(inputListPath, FileMode.Open,
+                FileAccess.ReadWrite))
+            using (StreamWriter siw = new StreamWriter(fis))
+            {
+                siw.WriteLine(InputPath);
+                siw.WriteLine(InputPath);
+                siw.Close();
+                Assert.True(P.ConvertInputList(inputListPath, ResourcesDir +
+                    "convertinputlist-1.pdf"), E.Msg);
+                File.Delete(inputListPath);
+            }
+        }
+
+        [Fact]
+        public void ConvertInputList2()
+        {
+            string inputListPath = Path.GetTempFileName();
+            using (FileStream fis = new FileStream(inputListPath, FileMode.Open,
+                FileAccess.ReadWrite))
+            using (StreamWriter siw = new StreamWriter(fis))
+            using (FileStream fos = File.Create(ResourcesDir + "convertinputlist-2.pdf"))
+            {
+                siw.WriteLine(InputPath);
+                siw.WriteLine(InputPath);
+                siw.WriteLine(InputPath);
+                siw.Close();
+                Assert.True(P.ConvertInputList(inputListPath, fos), E.Msg);
+                File.Delete(inputListPath);
+            }
+        }
+
+        [Fact]
         public void ConvertString1()
         {
             string input = File.ReadAllText(InputPath, Encoding.UTF8);
@@ -167,6 +202,43 @@ namespace PrinceXML.Wrapper.Tests
                 P.RasterPage = 1;
                 P.RasterFormat = RasterFormat.Png;
                 Assert.True(P.Rasterize(fis, fos), E.Msg);
+            }
+        }
+
+        [Fact]
+        public void RasterizeInputList1()
+        {
+            string inputListPath = Path.GetTempFileName();
+            using (FileStream fis = new FileStream(inputListPath, FileMode.Open,
+                FileAccess.ReadWrite))
+            using (StreamWriter siw = new StreamWriter(fis))
+            {
+                siw.WriteLine(InputPath);
+                siw.WriteLine(InputPath);
+                siw.Close();
+                Assert.True(P.RasterizeInputList(inputListPath, ResourcesDir +
+                    "rasterizeinputlist-1-page%d.png"), E.Msg);
+                File.Delete(inputListPath);
+            }
+        }
+
+        [Fact]
+        public void RasterizeInputList2()
+        {
+            string inputListPath = Path.GetTempFileName();
+            using (FileStream fis = new FileStream(inputListPath, FileMode.Open,
+                FileAccess.ReadWrite))
+            using (StreamWriter siw = new StreamWriter(fis))
+            using (FileStream fos = File.Create(ResourcesDir + "rasterizeinputlist-2.png"))
+            {
+                siw.WriteLine(InputPath);
+                siw.WriteLine(InputPath);
+                siw.WriteLine(InputPath);
+                siw.Close();
+                P.RasterPage = 3;
+                P.RasterFormat = RasterFormat.Png;
+                Assert.True(P.RasterizeInputList(inputListPath, fos), E.Msg);
+                File.Delete(inputListPath);
             }
         }
 
