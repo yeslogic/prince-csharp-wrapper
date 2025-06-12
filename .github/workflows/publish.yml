@@ -27,7 +27,7 @@ jobs:
         continue-on-error: false
       # Workaround for github-pages-deploy-action, which requires Ubuntu.
       - name: Upload DocFx artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: site
           path: docfx_project/_site
@@ -48,7 +48,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: Download DocFx artifact
-        uses: actions/download-artifact@v4.1.7
+        uses: actions/download-artifact@v4
         with:
           name: site
           path: site
