@@ -648,6 +648,25 @@ references:
   isSpec: "True"
   fullName: PrinceXML.Wrapper.Prince.Convert
   nameWithType: Prince.Convert
+- uid: PrinceXML.Wrapper.Prince.ConvertInputList(System.String,Stream)
+  name: ConvertInputList(String, Stream)
+  href: api/PrinceXML.Wrapper.Prince.html#PrinceXML_Wrapper_Prince_ConvertInputList_System_String_Stream_
+  commentId: M:PrinceXML.Wrapper.Prince.ConvertInputList(System.String,Stream)
+  fullName: PrinceXML.Wrapper.Prince.ConvertInputList(System.String, Stream)
+  nameWithType: Prince.ConvertInputList(String, Stream)
+- uid: PrinceXML.Wrapper.Prince.ConvertInputList(System.String,System.String)
+  name: ConvertInputList(String, String)
+  href: api/PrinceXML.Wrapper.Prince.html#PrinceXML_Wrapper_Prince_ConvertInputList_System_String_System_String_
+  commentId: M:PrinceXML.Wrapper.Prince.ConvertInputList(System.String,System.String)
+  fullName: PrinceXML.Wrapper.Prince.ConvertInputList(System.String, System.String)
+  nameWithType: Prince.ConvertInputList(String, String)
+- uid: PrinceXML.Wrapper.Prince.ConvertInputList*
+  name: ConvertInputList
+  href: api/PrinceXML.Wrapper.Prince.html#PrinceXML_Wrapper_Prince_ConvertInputList_
+  commentId: Overload:PrinceXML.Wrapper.Prince.ConvertInputList
+  isSpec: "True"
+  fullName: PrinceXML.Wrapper.Prince.ConvertInputList
+  nameWithType: Prince.ConvertInputList
 - uid: PrinceXML.Wrapper.Prince.ConvertString(System.String,Stream)
   name: ConvertString(String, Stream)
   href: api/PrinceXML.Wrapper.Prince.html#PrinceXML_Wrapper_Prince_ConvertString_System_String_Stream_
@@ -827,6 +846,25 @@ references:
   isSpec: "True"
   fullName: PrinceXML.Wrapper.Prince.Rasterize
   nameWithType: Prince.Rasterize
+- uid: PrinceXML.Wrapper.Prince.RasterizeInputList(System.String,Stream)
+  name: RasterizeInputList(String, Stream)
+  href: api/PrinceXML.Wrapper.Prince.html#PrinceXML_Wrapper_Prince_RasterizeInputList_System_String_Stream_
+  commentId: M:PrinceXML.Wrapper.Prince.RasterizeInputList(System.String,Stream)
+  fullName: PrinceXML.Wrapper.Prince.RasterizeInputList(System.String, Stream)
+  nameWithType: Prince.RasterizeInputList(String, Stream)
+- uid: PrinceXML.Wrapper.Prince.RasterizeInputList(System.String,System.String)
+  name: RasterizeInputList(String, String)
+  href: api/PrinceXML.Wrapper.Prince.html#PrinceXML_Wrapper_Prince_RasterizeInputList_System_String_System_String_
+  commentId: M:PrinceXML.Wrapper.Prince.RasterizeInputList(System.String,System.String)
+  fullName: PrinceXML.Wrapper.Prince.RasterizeInputList(System.String, System.String)
+  nameWithType: Prince.RasterizeInputList(String, String)
+- uid: PrinceXML.Wrapper.Prince.RasterizeInputList*
+  name: RasterizeInputList
+  href: api/PrinceXML.Wrapper.Prince.html#PrinceXML_Wrapper_Prince_RasterizeInputList_
+  commentId: Overload:PrinceXML.Wrapper.Prince.RasterizeInputList
+  isSpec: "True"
+  fullName: PrinceXML.Wrapper.Prince.RasterizeInputList
+  nameWithType: Prince.RasterizeInputList
 - uid: PrinceXML.Wrapper.Prince.RasterizeString(System.String,Stream)
   name: RasterizeString(String, Stream)
   href: api/PrinceXML.Wrapper.Prince.html#PrinceXML_Wrapper_Prince_RasterizeString_System_String_Stream_
