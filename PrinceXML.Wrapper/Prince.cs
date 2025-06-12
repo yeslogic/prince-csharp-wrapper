@@ -224,6 +224,50 @@ namespace PrinceXML.Wrapper
         }
 
         /// <summary>
+        /// Convert multiple XML or HTML files to a PDF file by reading an input list from a
+        /// specified file. (An input list is a newline-separated sequence of file paths / URLs.)
+        /// </summary>
+        /// <param name="inputListPath">The path to the input list file.</param>
+        /// <param name="outputPath">The filename of the output PDF file.</param>
+        /// <returns>true if a PDF file was generated successfully.</returns>
+        public bool ConvertInputList(string inputListPath, string outputPath)
+        {
+            List<string> cmdLine = GetJobCommandLine("normal");
+            cmdLine.Add(ToCommand("input-list", inputListPath));
+            cmdLine.Add(ToCommand("output", outputPath));
+
+            using (Process process = StartPrince(cmdLine))
+            {
+                return ReadMessages(process.StandardError);
+            }
+        }
+
+        /// <summary>
+        /// Convert multiple XML or HTML files to a PDF file by reading an input list from a
+        /// specified file. (An input list is a newline-separated sequence of file paths / URLs.)
+        /// </summary>
+        /// <param name="inputListPath">The path to the input list file.</param>
+        /// <param name="output">
+        /// The output Stream to which Prince will write the PDF output.
+        /// </param>
+        /// <returns>true if a PDF file was generated successfully.</returns>
+        public bool ConvertInputList(string inputListPath, Stream output)
+        {
+            List<string> cmdLine = GetJobCommandLine("buffered");
+            cmdLine.Add(ToCommand("input-list", inputListPath));
+            cmdLine.Add(ToCommand("output", "-"));
+
+            using (Process process = StartPrince(cmdLine))
+            {
+                using (Stream fromPrince = process.StandardOutput.BaseStream)
+                {
+                    fromPrince.CopyTo(output);
+                }
+                return ReadMessages(process.StandardError);
+            }
+        }
+
+        /// <summary>
         /// Convert an XML or HTML string to a PDF file.
         /// </summary>
         /// <param name="input">The XML or HTML document in the form of a string.</param>
@@ -377,6 +421,62 @@ namespace PrinceXML.Wrapper
                 {
                     input.CopyTo(toPrince);
                 }
+                using (Stream fromPrince = process.StandardOutput.BaseStream)
+                {
+                    fromPrince.CopyTo(output);
+                }
+                return ReadMessages(process.StandardError);
+            }
+        }
+
+        /// <summary>
+        /// Rasterize multiple XML or HTML files by reading an input list from a specified file.
+        /// (An input list is a newline-separated sequence of file paths / URLs.)
+        /// </summary>
+        /// <param name="inputListPath">The path to the input list file.</param>
+        /// <param name="outputPath">
+        /// A template string from which the raster files will be named (e.g. "page_%02d.png"
+        /// will cause Prince to generate page_01.png, page_02.png, ..., page_10.png etc.).
+        /// </param>
+        /// <returns>true if the input was successfully rasterized.</returns>
+        public bool RasterizeInputList(string inputListPath, string outputPath)
+        {
+            List<string> cmdLine = GetJobCommandLine("normal");
+            cmdLine.Add(ToCommand("input-list", inputListPath));
+            cmdLine.Add(ToCommand("raster-output", outputPath));
+
+            using (Process process = StartPrince(cmdLine))
+            {
+                return ReadMessages(process.StandardError);
+            }
+        }
+
+        /// <summary>
+        /// Rasterize multiple XML or HTML files by reading an input list from a specified file.
+        /// (An input list is a newline-separated sequence of file paths / URLs.)
+        /// </summary>
+        /// <param name="inputListPath">The path to the input list file.</param>
+        /// <param name="output">
+        /// The output Stream to which Prince will write the raster output.
+        /// </param>
+        /// <returns>true if the input was successfully rasterized.</returns>
+        public bool RasterizeInputList(string inputListPath, Stream output)
+        {
+            if (RasterPage < 1)
+            {
+                throw new ApplicationException("RasterPage has to be > 0.");
+            }
+            if (RasterFormat == null || RasterFormat == RasterFormat.Auto)
+            {
+                throw new ApplicationException("RasterFormat has to be set to Jpeg or Png.");
+            }
+
+            List<string> cmdLine = GetJobCommandLine("buffered");
+            cmdLine.Add(ToCommand("input-list", inputListPath));
+            cmdLine.Add(ToCommand("raster-output", "-"));
+
+            using (Process process = StartPrince(cmdLine))
+            {
                 using (Stream fromPrince = process.StandardOutput.BaseStream)
                 {
                     fromPrince.CopyTo(output);
