@@ -158,7 +158,7 @@ namespace PrinceXML.Wrapper
         }
 
         /// <summary>
-        /// Convert multiple XDML or HTML files to a PDF file.
+        /// Convert multiple XML or HTML files to a PDF file.
         /// </summary>
         /// <param name="inputPaths">The filenames of the input XML or HTML documents.</param>
         /// <param name="outputPath">The filename of the output PDF file.</param>
