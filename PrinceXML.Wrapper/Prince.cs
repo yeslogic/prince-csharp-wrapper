@@ -26,11 +26,6 @@ namespace PrinceXML.Wrapper
         /// to remap that URL to.
         /// </value>
         public List<(string, string)> Remaps { get; } = new List<(string, string)>();
-        /// <summary>
-        /// Disable access to local files.
-        /// </summary>
-        /// <value>true if access to local files is disabled. Default value is false.</value>
-        public bool NoLocalFiles { get; set; }
 
         // CSS options.
         /// <summary>
@@ -545,7 +540,6 @@ namespace PrinceXML.Wrapper
             if (Iframes) { cmdLine.Add(ToCommand("iframes")); }
             if (XInclude) { cmdLine.Add(ToCommand("xinclude")); }
             if (XmlExternalEntities) { cmdLine.Add(ToCommand("xml-external-entities")); }
-            if (NoLocalFiles) { cmdLine.Add(ToCommand("no-local-files")); }
 
             if (JavaScript) { cmdLine.Add(ToCommand("javascript")); }
             if (Scripts.Any()) { cmdLine.AddRange(ToCommands("script", Scripts)); }
