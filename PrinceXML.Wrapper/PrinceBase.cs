@@ -81,6 +81,11 @@ namespace PrinceXML.Wrapper
         /// </summary>
         /// <value>true if XXE is enabled. Default value is false.</value>
         public bool XmlExternalEntities { get; set; }
+        /// <summary>
+        /// Disable access to local files.
+        /// </summary>
+        /// <value>true if access to local files is disabled. Default value is false.</value>
+        public bool NoLocalFiles { get; set; }
 
         // Network options.
         /// <summary>
@@ -629,6 +634,8 @@ namespace PrinceXML.Wrapper
             if (Log != null) { cmdLine.Add(ToCommand("log", Log)); }
             if (NoWarnCssUnknown) { cmdLine.Add(ToCommand("no-warn-css-unknown")); }
             if (NoWarnCssUnsupported) { cmdLine.Add(ToCommand("no-warn-css-unsupported")); }
+
+            if (NoLocalFiles) { cmdLine.Add(ToCommand("no-local-files")); }
 
             if (NoNetwork) { cmdLine.Add(ToCommand("no-network")); }
             if (NoRedirects) { cmdLine.Add(ToCommand("no-redirects")); }
