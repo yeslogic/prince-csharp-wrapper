@@ -276,6 +276,8 @@ namespace PrinceXML.Wrapper.Tests
                 P.NoWarnCssUnknown = true;
                 P.NoWarnCssUnsupported = true;
 
+                P.NoLocalFiles = true;
+
                 P.NoNetwork = true;
                 P.NoRedirects = true;
                 P.AuthUser = "x";
@@ -349,7 +351,6 @@ namespace PrinceXML.Wrapper.Tests
                 P.Iframes = true;
                 P.XInclude = true;
                 P.XmlExternalEntities = true;
-                P.NoLocalFiles = true;
 
                 P.JavaScript = true;
                 P.Scripts.Add("x");
@@ -419,6 +420,31 @@ namespace PrinceXML.Wrapper.Tests
                 {
                     Assert.True(P.Convert(InputPath, ms), E.Msg);
                 }
+            }
+        }
+
+        public class PrinceStandaloneTests
+        {
+            public class NoLocalEvents : PrinceEvents
+            {
+                public void OnMessage(MessageType msgType, string msgLocation, string msgText)
+                {
+                    Assert.Equal(MessageType.WRN, msgType);
+                    Assert.Contains("convert-1.css", msgLocation);
+                    Assert.Equal("not loading local file", msgText);
+                }
+
+                public void OnDataMessage(string name, string value) {}
+            }
+
+            [Fact]
+            public void ConvertNoLocal()
+            {
+                PrinceEvents E = new NoLocalEvents();
+                Prince P = new Prince(PrincePath, E);
+                P.NoLocalFiles = true;
+
+                Assert.True(P.Convert(ResourcesDir + "convert-nolocal.html"));
             }
         }
     }
