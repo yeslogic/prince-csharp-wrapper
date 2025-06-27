@@ -171,5 +171,35 @@ namespace PrinceXML.Wrapper.Tests
                 }
             }
         }
+
+        public class PrinceControlStandaloneTests
+        {
+            public class NoLocalEvents : PrinceEvents
+            {
+                public void OnMessage(MessageType msgType, string msgLocation, string msgText)
+                {
+                    Assert.Equal(MessageType.WRN, msgType);
+                    Assert.Contains("convert-1.css", msgLocation);
+                    Assert.Equal("not loading local file", msgText);
+                }
+
+                public void OnDataMessage(string name, string value) {}
+            }
+
+            [Fact]
+            public void ConvertNoLocal()
+            {
+                PrinceEvents E = new NoLocalEvents();
+                PrinceControl P = new PrinceControl(PrincePath, E);
+                P.NoLocalFiles = true;
+
+                P.Start();
+                using (Stream fs = File.Create(ResourcesDir + "control-nolocal.pdf"))
+                {
+                    Assert.True(P.Convert(ResourcesDir + "convert-nolocal.html", fs));
+                }
+                P.Stop();
+            }
+        }
     }
 }
