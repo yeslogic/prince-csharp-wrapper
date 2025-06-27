@@ -156,7 +156,7 @@ namespace PrinceXML.Wrapper.Tests
                 P.PdfForms = true;
 
                 P.AddFileAttachment("x");
-                P.AddFileAttachment(new byte[] {0}, "x", "y");
+                P.AddFileAttachment(new byte[] { 0 }, "x", "y");
 
                 P.PdfTitle = "x";
                 P.PdfSubject = "x";
